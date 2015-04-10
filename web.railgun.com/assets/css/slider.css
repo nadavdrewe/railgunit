@@ -1,0 +1,127 @@
+a.focus-link:hover {
+	color: #FFF;
+}
+.btn.focuz-slide-bs-btn {
+  min-height: auto;
+  padding:10px 20px;
+  color: #FFF;
+}
+.btn.focuz-slide-bs-btn:hover {
+  background: #00a1cb;
+  color: #FFF;
+  border-color: #00a1cb;
+}
+.circle-mini {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	border:1px solid #FFF;
+	border-radius: 50%;
+	padding:10px;
+	color:#FFF;
+}
+img.focuz-slide-tick {
+	display: initial;
+	margin-right: 5px;
+}
+.focuz-slide-smt {
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color:#FFF;
+}
+.focuz-slide-mdt {
+	font-family: 'Oswald', sans-serif;
+	font-size: 30px;
+	font-weight:300;
+	color:#FFF;
+}
+.focuz-slide-lgt {
+	font-family: 'Oswald', sans-serif;
+	font-size: 40px;
+	font-weight:700;
+	color:#FFF;
+}
+.slide2 .focuz-slide-lgt,
+.slide5 .focuz-slide-lgt {
+	font-size: 50px;
+}
+.slide3 .focuz-slide-lgt {
+	font-size: 125px;
+}
+.slide4 .focuz-slide-lgt {
+	font-size: 80px;
+	line-height: 90px;
+}
+.slide6 .focuz-slide-lgt {
+	font-size: 70px;
+}
+.slide7 .focuz-slide-lgt {
+	font-size: 100px;
+}
+.slide6 .focuz-slide-mdt,
+.slide8 .focuz-slide-mdt {
+	font-size: 20px;
+}
+.slide9 .focuz-slide-lgt {
+	font-size: 50px;
+}
+.slide9 .focuz-slide-mdt {
+	font-size:30px;
+}
+.ms-layer.blue-bg {
+	padding: 10px 15px;
+	font-weight: 700;
+}
+.ms-layer.blue-bg.border-top {
+	border-top: 4px solid #FFF;
+}
+.ms-layer.blue-bg.border-right {
+	border-right: 4px solid #FFF;
+}
+.ms-layer.blue-bg.border-left {
+	border-left: 4px solid #FFF;
+}
+.slide8 .ms-layer.white-bg,
+.slide8 .ms-layer.blue-bg {
+	font-family: 'Oswald', sans-serif;
+	font-size:20px;
+	font-weight:700;
+	text-transform: uppercase;
+	padding: 15px;
+}
+.slide8 .ms-layer.blue-bg {
+	color: #FFF;
+}
+.slide8 .ms-layer.white-bg {
+	color: #00a1cb;
+}
+.slide8 .ms-layer.white-bg em,
+.slide8 .ms-layer.blue-bg em {
+	font-weight: 300;
+}
+.slide10 a.ms-layer {
+	color: #00a1cb;
+}
+.slide10 a.ms-layer:hover {
+	color: #FFF;
+}
+.focuz-slide-smt span,
+.focuz-slide-mdt span,
+.focuz-slide-lgt span {
+	color: #00a1cb;
+}
+.slide10 .focuz-slide-mdt span {
+	font-weight: 700;
+}
+/* Fix */
+.slide-readmore-fix,
+.slide-contact-fix {
+	display: block;
+	width: 100px;
+}
+.ms-timerbar {
+	height: 5px;
+	top: -5px;
+	background: #2d2d2d;
+	opacity: 0.1;
+}
