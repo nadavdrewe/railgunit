@@ -13,18 +13,43 @@ namespace web.railgun.com.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Portfolio()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Project()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
+
+        public ActionResult Projects()
+        {
+            return View();
+        }
+
+        public ActionResult WhatWeDo()
+        {
+            return View();
+        }
+
+        public ActionResult LetTalkBusiness()
+        {
+            return View();
+        }
+
+        public ActionResult LetTalkTech()
+        {
+            return View();
+        }
+
+        public ActionResult RailFare()
+        {
+            return View();
+        }
+
+
+     
+     
     }
 }
