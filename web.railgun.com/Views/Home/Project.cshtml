@@ -1,4 +1,6 @@
-﻿
+﻿@using web.railgun.com.Models
+@model Project
+
 @{
     ViewBag.Title = "Project";
 }
@@ -9,15 +11,15 @@
     <div class="container">
         <div class="page-header-content display-table-middle">
             <div class="inside-content vertical-middle">
-                <h1 class="page-title text-center highlighted">portfolio</h1>
-                <h3 class="page-description text-center">you can take a look at some of the bests of our works here</h3>
+                <h1 class="page-title text-center highlighted">Railgun.it portfolio</h1>
+                <h3 class="page-description text-center">@Model.Name</h3>
             </div>
         </div><!--  /.page-header-content -->
         <div class="site-breadcrumb pull-right">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Portfolio</a></li>
-                <li class="breadcrumb-item active">Single Project</li>
+                <li class="breadcrumb-item active">@Model.Name</li>
             </ol>
         </div>
     </div><!--  /.container -->
@@ -39,7 +41,7 @@
                                 <div class="col-md-8">
                                     <div class="portfolio-images border-style bm50">
                                         <figure>
-                                            <img src="images/portfolio/single-full/1.jpg" alt="project Image">
+                                            <img src="@Model.Graphic1" alt="@Model.Name Image">
                                         </figure>
                                     </div><!-- /.portfolio-item -->
                                 </div>
@@ -47,39 +49,42 @@
                                 <div class="col-md-4">
                                     <div class="stripe-full bm50">
                                         <h4 class="stripe-over stripe-blue tm0">
-                                            Project <span>Title</span> goes Here
+                                            Project: <span>@Model.Name</span>
                                         </h4>
-                                        <div class="project-like">138 <i class="fa fa-heart-o"></i></div>
+                                        @*<div class="project-like">138 <i class="fa fa-heart-o"></i></div>*@
                                     </div><!-- /.stripe-full -->
                                     <ul class="project-meta">
                                         <li>
                                             <span class="meta-icon"><i class="fa fa-tag"></i></span>
                                             <span class="meta-name">Categories</span>
-                                            <span class="meta-text pull-right">Agency, Business, Branding</span>
+                                            <span class="meta-text pull-right">@Model.Categories</span>
                                         </li>
                                         <li>
                                             <span class="meta-icon"><i class="fa fa-pencil"></i></span>
-                                            <span class="meta-name">Author</span>
-                                            <span class="meta-text pull-right">Richard Peterson</span>
-                                        </li>
-                                        <li>
-                                            <span class="meta-icon"><i class="fa fa-briefcase"></i></span>
-                                            <span class="meta-name">Skills</span>
-                                            <span class="meta-text pull-right">HTML, CSS, PHP, JavaScript</span>
+                                            <span class="meta-name">Team Lead</span>
+                                            <span class="meta-text pull-right">@Model.TeamLead</span>
                                         </li>
                                         <li>
                                             <span class="meta-icon"><i class="fa fa-calendar"></i></span>
-                                            <span class="meta-name">Date</span>
-                                            <span class="meta-text pull-right"><time datetime="2014-12-14 19:00">14 December 2014</time></span>
+                                            <span class="meta-name">Date Initiated</span>
+                                            <span class="meta-text pull-right"><time datetime="2014-12-14 19:00">@(((DateTime)Model.DateInitiated).ToString("dd/MM/yyyy"))</time></span>
                                         </li>
                                         <li>
                                             <span class="meta-icon"><i class="fa fa-users"></i></span>
                                             <span class="meta-name">Clients</span>
-                                            <span class="meta-text pull-right">Envato, Themeforest</span>
+                                            <span class="meta-text pull-right">@Model.Clients</span>
+                                        </li>
+                                        <li>
+                                            <span class="meta-icon"><i class="fa fa-briefcase"></i></span>
+                                            <span class="meta-name">Tech</span>
+                                            <span class="meta-text pull-right dotdot">@Model.TechnologiesUsed</span>
                                         </li>
                                     </ul>
                                     <div>
-                                        <a href="#" class="btn full-btn md-btn">Launch Project <i class="fa fa-rocket"></i></a>
+                                        <a href="@Model.ProjectURL" class="btn full-btn md-btn"> Launch Project <i class="fa fa-rocket"></i></a>
+                                    </div>
+                                    <div>
+                                        <a href="@Model.GitRepo" class="btn full-btn md-btn">GitHub <i class="fa fa-github"></i></a>
                                     </div>
                                 </div><!-- /.col-md-4 -->
                             </div><!-- /.row -->
@@ -95,14 +100,7 @@
 
                             <div class="post-container project-description">
                                 <p>
-                                    <span class="dropcap">D</span> Proin in magna a ipsum viverra scelerisque eu
-                                    nec turpis. Nunc vestibulum fringilla accumsan.Praesearcu turpis, ornare quis nunc vel, Nulla sed odio lacinia dolor. Fusce aliquam sapien eu nunc. sollicitudin in aliquam ligula quis.
-                                </p>
-                                <p>
-                                    adipiscing porttitor lectus. Nulla sed odio lacinia dolor. Fusce aliquam sapien eu nunc. sollicitudin in aliquam ligula quis.nibh venenatis sollicitudin.
-                                </p>
-                                <p>
-                                    Cras pharetra, enim sodales feugiat tincidunt, mauris nisl hendrerit leo, vitae facilisis turpis risus porttitor leo. Mauris venenatis tincidunt mauris, ornare fermentum nulla lobortis eget. Quisque in ultrices ante. Morbi fringilla augue eget gravi euismod. Suspendisse vel varius justo, vitae luctus ante. Fusce posuere elit sed congue fermentum. Aliquam vel risus nec lorem sodales mattis. Curabitur eu mauris metus.
+                                  @Html.Raw(Model.Description)
                                 </p>
                             </div><!-- /.project-description -->
 
@@ -127,21 +125,21 @@
         <div class="container">
 
             <div class="share-box text-center dark-bg p30">
-                <h4 class="share-title">Let's <span>share</span> this project with friends</h4>
-                <p>You can introduce us to your friends to let them know about quality of our works on different social medias</p>
+                <h4 class="share-title">Want to know more? Here are some links to our code <span>repositories</span></h4>
+                <p>...Download the code for yourself!</p>
                 <div class="social-icons">
                     <ul>
                         <li>
-                            <a href="#">
-                                <div class="icon-content fa-facebook">Facebook</div>
+                            <a href="https://github.com/nadavdrewe">
+                                <div class="icon-content fa-github">Github</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <div class="icon-content fa-twitter">Twitter</div>
+                            <a href="https://nadav808.visualstudio.com">
+                                <div class="icon-content fa-windows">VS Online</div>
                             </a>
                         </li>
-                        <li>
+                        @*<li>
                             <a href="#">
                                 <div class="icon-content fa-google-plus">Google Plus</div>
                             </a>
@@ -150,7 +148,7 @@
                             <a href="#">
                                 <div class="icon-content fa-pinterest">Pinterest</div>
                             </a>
-                        </li>
+                        </li>*@
                     </ul>
                 </div><!-- /.social-icons -->
             </div>
@@ -173,7 +171,7 @@
                     <span class="stripe-t-right"></span>
                 </h2>
                 <p class="section-description">
-                    We do love to work and increase our counter numbers, this is what we’ve done till now
+                    We do love to work, here are some numbers from the past 24 hours:
                 </p>
             </div><!-- /.title-container -->
 
@@ -183,9 +181,12 @@
                     <div class="item lrp15">
                         <div class="fact-item  text-center">
                             <p class="stripe-bfixw fact-count">
-                                210
+                                @{
+                                    var rand = new Random();
+                                    rand.Next(8, 22);
+                                }
                             </p>
-                            <h6 class="fact-details">Completed Projects</h6>
+                            <h6 class="fact-details">Repository check-ins</h6>
                             <div class="fact-icon">
                                 <i class="fa fa-check-square-o"></i>
                             </div>
@@ -195,9 +196,9 @@
                     <div class="item lrp15">
                         <div class="fact-item  text-center">
                             <p class="stripe-bfixw fact-count">
-                                360
+                                @rand.Next(40, 65);
                             </p>
-                            <h6 class="fact-details">Hours of Work <small>/ month</small></h6>
+                            <h6 class="fact-details">Average Hours of Work</h6>
                             <div class="fact-icon">
                                 <i class="fa fa-clock-o"></i>
                             </div>
@@ -207,7 +208,7 @@
                     <div class="item lrp15">
                         <div class="fact-item  text-center">
                             <p class="stripe-bfixw fact-count">
-                                135
+                                @rand.Next(13, 25);
                             </p>
                             <h6 class="fact-details">Solved Tickets</h6>
                             <div class="fact-icon">
@@ -219,9 +220,9 @@
                     <div class="item lrp15">
                         <div class="fact-item  text-center">
                             <p class="stripe-bfixw fact-count">
-                                174
+                                @rand.Next(20, 32)
                             </p>
-                            <h6 class="fact-details">Satisfied Clients </h6>
+                            <h6 class="fact-details">Cups of Earl Grey </h6>
                             <div class="fact-icon">
                                 <i class="fa fa-thumbs-up"></i>
                             </div>
@@ -231,9 +232,9 @@
                     <div class="item lrp15">
                         <div class="fact-item  text-center">
                             <p class="stripe-bfixw fact-count">
-                                3918
-                            </p>
-                            <h6 class="fact-details">Served Coffees</h6>
+                                @rand.Next(4, 15);
+                            </p
+                            <h6 class="fact-details">Hours wasted playing Dota2</h6>
                             <div class="fact-icon">
                                 <i class="fa fa-coffee"></i>
                             </div>
@@ -395,4 +396,3 @@
         </div><!-- /.section-padding -->
     </div><!-- /.container -->
 </section><!-- /#team -->
-

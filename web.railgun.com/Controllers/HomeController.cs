@@ -3,11 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using web.railgun.com.Models;
 
 namespace web.railgun.com.Controllers
 {
     public class HomeController : Controller
     {
+
+        railgunContext db = new railgunContext();
+
+
+        [ChildActionOnly]
+        public ActionResult RenderMenu(int CategoryId)
+        {
+            var model = db.Projects.Where(x => x.CategoryId == CategoryId).ToList();
+            return PartialView(model);
+        }
+
+
         public ActionResult Index()
         {
             return View();
@@ -18,15 +31,32 @@ namespace web.railgun.com.Controllers
             return View();
         }
 
-        public ActionResult Project()
+        
+        public ActionResult Project(int ProjectId)
         {
-            return View();
+            var model = db.Projects.Find(ProjectId);
+            return View(model);
         }
 
         public ActionResult Projects()
         {
-            return View();
+            var projects = db.Projects.ToList().OrderByDescending(x=>x.DateInitiated);
+
+            ViewBag.Categories = db.Categories.ToList();
+
+            return View(projects);
         }
+
+
+        [HttpPost]
+        public ActionResult Projects(int id)
+        {
+            var projects = db.Projects.Where(x=>x.CategoryId.Equals(id)).ToList().OrderByDescending(x => x.DateInitiated);
+            ViewBag.Categories = db.Categories.ToList();
+
+            return View(projects);
+        }
+
 
         public ActionResult WhatWeDo()
         {

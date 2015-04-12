@@ -1,0 +1,13 @@
+﻿@using web.railgun.com.Models
+@model IEnumerable<Project>
+
+@{
+    foreach (var project in Model)
+    {
+        var id = project.ProjectId;
+        string title = project.Name;
+
+        <a href="~/Home/Project?ProjectId=@id">@title</a>
+            @*<li>@Html.ActionLink(title, "Project", "Home", new { id = id }, null)</li>*@
+    }
+}

@@ -1,9 +1,9 @@
 ﻿
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
-    <title>FOCUZ - Creative HTML5 Template</title>
+    <title>RAILGUN.IT - WebTech Designed For Your Business</title>
 
     <!-- Meta -->
     <meta name="description" content="FOCUZ is a Creative Multipurpose HTML5 Template">
@@ -56,6 +56,9 @@
     <!-- Responsive Styles -->
     <link rel="stylesheet" type="text/css" href="~/assets/css/responsive.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 </head>
 <body>
 
@@ -69,7 +72,7 @@
         </div>
     </div><!-- /.preloader-box -->
     <!-- Header Section -->
-    <header id="header">
+    <header id="header" ng-controller="headerController">
         <div id="top-menu-container">
             <div id="header-wrap">
                 <div class="container clearfix">
@@ -79,108 +82,146 @@
 
                     <!-- Logo  -->
                     <div id="logo">
-                        <a href="index.html" class="standard-logo"><img src="assets/images/logo.png" alt="Focuz Logo"></a>
+                        <a href="index.html" class="standard-logo"><img src="~/assets/images/logo.png" alt="Focuz Logo"></a>
                     </div><!-- #logo end -->
                     <!-- Primary Navigation  -->
                     <nav id="primary-menu">
 
                         <ul class="main-menu">
                             <li class="current has-sub-menu">
-                                <a href="index.html"><div>Railgun</div></a>
+                                <a href="@Url.Action("Index","Home", null, Request.Url.Scheme)"><div>Railgun</div></a>
                                 <ul class="sub-menu">
-                                    <li><a href="home-01.html">What We Do</a></li>
-                                    <li><a href="home-01.html">Let's Talk Business</a></li>
-                                    <li><a href="home-01.html">Let's Talk Tech</a></li>
-                                    <li><a href="home-01.html">Jobs</a></li>
-                                    
+                                    <li><a href="@Url.Action("WhatWeDo", "Home", null, Request.Url.Scheme)">What We Do</a></li>
+                                    <li><a href="@Url.Action("LetTalkBusiness", "Home", null, Request.Url.Scheme)">Let's Talk Business</a></li>
+                                    <li><a href="@Url.Action("LetTalkTech", "Home", null, Request.Url.Scheme)">Let's Talk Tech</a></li>
+                                    <li><a href="@Url.Action("", "Home", null, Request.Url.Scheme)">Jobs</a></li>
+                                    <li><a href="@Url.Action("WhatWeDo", "Home", null, Request.Url.Scheme)">About Railgun</a></li>
+
+                                </ul><!-- /.sub-menu -->
+                            </li><!-- /.has-sub-menu -->
+
+
+
+                            <li class="has-sub-menu">
+                                <a href="#">
+                                    <div>Railgunned</div>
+                                </a>
+
+                                <ul class="sub-menu">
+                                    <li><a href="@Url.Action("Projects", "Home", null, Request.Url.Scheme)"><i class="fa fa-history"></i>All Projects</a></li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-shopping-cart"></i>Websites</a>
+                                        <ul class="sub-menu">
+                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 1 });}
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-user"></i>Case Management</a>
+                                        <ul class="sub-menu">
+                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 2 });}
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-envelope"></i>Integrations</a>
+                                        <ul class="sub-menu">
+                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 3 });}
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-support"></i>Management Information</a>
+                                        <ul class="sub-menu">
+                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 6 });}
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-users"></i>Webservices</a>
+                                        <ul class="sub-menu">
+                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 4 });}
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-users"></i>Mobile</a>
+                                        <ul class="sub-menu">
+                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 5 });}
+                                        </ul>
+                                    </li>
+
                                 </ul><!-- /.sub-menu -->
                             </li><!-- /.has-sub-menu -->
 
                             <li class="has-sub-menu">
-                                <a href="#"><div>Railgunned</div></a>
+                                <a href="#">
+                                    <div>RailTech</div>
+                                </a>
+
                                 <ul class="sub-menu">
-                                    <li><a href="portfolio-01-2-Cols-01.html">Summary</a></li>
-                                    <li><a href="portfolio-02-2-Cols-02.html">Grind and Co - Back Of House</a></li>
-                                    <li><a href="portfolio-03-3-Cols-01.html">Grind and Co - Webservices Integration</a></li>
-                                    <li><a href="portfolio-04-3-Cols-02.html">Portugal Rental Cottages - Website and Case Management</a></li>
-                                    <li><a href="portfolio-05-4-Cols-01.html">InterResolve / Doctor's Chambers Webservices Integration </a></li>
-                                    <li><a href="portfolio-06-4-Cols-02.html">Cardkin - Website</a></li>
-                                    
-                            
-                                   
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-shopping-cart"></i>Website and App</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="shop-02-LeftSidebar.html">UI and Layout </a></li>
+                                            <li><a href="shop-02-LeftSidebar.html">Custom Design and Logos </a></li>
+                                            <li><a href="shop-01-FullWidth.html">Web Technologies </a></li>
+                                            <li><a href="shop-01-FullWidth.html">Data </a></li>
+                                            <li><a href="shop-02-LeftSidebar.html">Business Modelling </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-users"></i>Our Service</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="team-members-02.html">Frequent builds</a></li>
+                                            <li><a href="about-me-03.html">Integrated Customer Feedback</a></li>
+                                            <li><a href="team-members-01.html">Testing and Signoff</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-support"></i>Hosting, Support and Aftercare</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="services-01.html">Own your own deployment</a></li>
+                                            <li><a href="services-01.html">  System Support </a></li>
+                                            <li><a href="services-02.html">  Extension Devlopment and 'Own Your Code'</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-user"></i>Webservices</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="about-us-01.html">Why Webservices?</a></li>
+                                            <li><a href="about-me-03.html">JSON via Web Api</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-envelope"></i>Responsive Design + Angular</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="contact-us-01.html"> <i class="fa fa-envelope"></i>Mobile apps - build once, run anywhere</a></li>
+                                            <li><a href="contact-us-01.html"> <i class="fa fa-envelope"></i>Templated Design</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-users"></i>Mobile</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="team-members-01.html"> <i class="fa fa-users"></i>Cordova</a></li>
+                                            <li><a href="team-members-02.html"> <i class="fa fa-users"></i>Xamarin</a></li>
+                                            <li><a href="team-members-02.html"> <i class="fa fa-users"></i>Native</a></li>
+                                        </ul>
+                                    </li>
+
                                 </ul><!-- /.sub-menu -->
                             </li><!-- /.has-sub-menu -->
 
-                            <li class="has-sub-menu">
-                                <a href="#"><div>RailTech</div></a>
-                                <ul class="sub-menu">
-                                    <li class="has-sub-menu">
-                                        <a href="#"> Blog Sidebar </a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-02-grid-01-2-Cols-LeftSidebar.html"> Blog 2 Col Left Sidebar</a></li>
-                                            <li><a href="blog-03-grid-01-2-Cols-RightSidebar.html"> Blog 2 Col Right Sidebar</a></li>
-                                            <li><a href="blog-06-grid-02-2-Cols-LeftSidebar.html"> Blog 2 Col Left Sidebar</a></li>
-                                            <li><a href="blog-07-grid-02-2-Cols-RightSidebar.html"> Blog 2 Col Right Sidebar</a></li>
-                                        </ul>
-                                    </li>
 
-                                    <li class="has-sub-menu">
-                                        <a href="#"> Blog Row </a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-10-rows-01.html"> Blog Row 01 </a></li>
-                                            <li><a href="blog-11-rows-02.html"> Blog Row 01 </a></li>
-                                        </ul>
-                                    </li>
 
-                                    <li class="has-sub-menu">
-                                        <a href="#"> Blog FullWidth </a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-12-FullWidth.html"> FullWidth</a></li>
-                                            <li><a href="blog-13-FullWidth-LeftSidebar.html"> FullWidth LeftSidebar </a></li>
-                                            <li><a href="blog-14-FullWidth-RightSidebar.html"> FullWidth RightSidebar</a></li>
-                                        </ul>
-                                    </li>
 
-                                    <li class="has-sub-menu">
-                                        <a href="#"> Blog Classic </a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-15-Classic-01-LeftSidebar.html"> Classic 01 LeftSidebar</a></li>
-                                            <li><a href="blog-16-Classic-01-RightSidebar.html"> Classic 01 RightSidebar</a></li>
-                                            <li><a href="blog-17-Classic-02-LeftSidebar.html"> Classic 02 LeftSidebar</a></li>
-                                            <li><a href="blog-18-Classic-02-RightSidebar.html"> Classic 02 RightSidebar</a></li>
-                                        </ul>
-                                    </li>
 
-                                    <li class="has-sub-menu">
-                                        <a href="#"> Blog Post </a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-19-Post-ImagePost.html"> Image Post</a></li>
-                                            <li><a href="blog-20-Post-GalleryPost.html"> Gallery Post</a></li>
-                                            <li><a href="blog-21-Post-ExVideoPost.html"> Ex Video Post</a></li>
-                                            <li><a href="blog-22-Post-SHVideoPost.html"> SH Video Post</a></li>
-                                            <li><a href="blog-23-Post-AudioPost.html"> Audio Post</a></li>
-                                            <li><a href="blog-24-Post-SoundcloudPost.html"> Soundcloud Post</a></li>
-                                            <li><a href="blog-25-Post-QuotePost.html"> Quote Post</a></li>
-                                            <li><a href="blog-26-Post-TwitterPost.html"> Twitter Post </a></li>
-                                            <li><a href="blog-27-Post-LinkPost.html"> Link Post </a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li><a href="blog-01-grid-01-2-Cols.html"> Blog 2 Col</a></li>
-                                    <li><a href="blog-04-grid-01-3-Cols.html"> Blog 3 Col</a></li>
-                                    <li><a href="blog-05-grid-02-2-Cols.html"> Blog 2 Col</a></li>
-                                    <li><a href="blog-08-grid-02-Timeline.html"> Blog TimeLine </a></li>
-                                    <li><a href="blog-09-grid-02-3-Cols.html"> Blog 3 Col</a></li>
-                                </ul><!-- /.sub-menu -->
-                            </li><!-- /.has-sub-menu -->
 
                             <li class="has-sub-menu">
-                                <a href="#"><div>Railware</div></a>
+                                <a href="#">
+                                    <div>RailTicket</div>
+                                </a>
+
                                 <ul class="sub-menu">
                                     <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-shopping-cart"></i> Shop Page</a>
+                                        <a href="#"> <i class="fa fa-shopping-cart"></i> Starting Your Development</a>
                                         <ul class="sub-menu">
-                                            <li><a href="shop-01-FullWidth.html"> <i class="fa fa-shopping-cart"></i> Shop FullWidth </a></li>
+                                            <li><a href="shop-01-FullWidth.html"> <i class="fa fa-shopping-cart"></i> </a></li>
                                             <li><a href="shop-02-LeftSidebar.html"> <i class="fa fa-shopping-cart"></i> Shop LeftSidebar </a></li>
                                             <li><a href="shop-03-RightSidebar.html"> <i class="fa fa-shopping-cart"></i> Shop RightSidebar </a></li>
                                             <li><a href="shop-04-SingleProduct.html"> <i class="fa fa-shopping-cart"></i> Shop SingleProduct </a></li>
@@ -195,7 +236,7 @@
                                         </ul>
                                     </li>
                                     <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-user"></i> About Page</a>
+                                        <a href="#"> <i class="fa fa-user"></i> Prices</a>
                                         <ul class="sub-menu">
                                             <li><a href="about-us-01.html"> <i class="fa fa-user"></i> About Us 01 </a></li>
                                             <li><a href="about-us-02.html"> <i class="fa fa-user"></i> About Us 02 </a></li>
@@ -204,28 +245,14 @@
                                         </ul>
                                     </li>
                                     <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-envelope"></i> Contact Page</a>
+                                        <a href="#"> <i class="fa fa-envelope"></i> Feature List</a>
                                         <ul class="sub-menu">
-                                            <li><a href="contact-us-01.html"> <i class="fa fa-envelope"></i> Contact Us 01 </a></li>
-                                            <li><a href="contact-us-02.html"> <i class="fa fa-envelope"></i> Contact Us 02 </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-support"></i> Service Page</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="services-01.html"> <i class="fa fa-support"></i> Service 01 </a></li>
-                                            <li><a href="services-02.html"> <i class="fa fa-support"></i> Service 02 </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-users"></i> Team Member Page</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="team-members-01.html"> <i class="fa fa-users"></i> Member Page 01 </a></li>
-                                            <li><a href="team-members-02.html"> <i class="fa fa-users"></i> Member Page 02 </a></li>
+                                            <li><a href="contact-us-01.html"> <i class="fa fa-envelope"></i> Websites </a></li>
+                                            <li><a href="contact-us-02.html"> <i class="fa fa-envelope"></i> Webservices </a></li>
+                                            <li><a href="contact-us-02.html"> <i class="fa fa-envelope"></i> Mobile App </a></li>
                                         </ul>
                                     </li>
                                     <li><a href="faq.html"> <i class="fa fa-tasks"></i> FAQ </a></li>
-                                    <li><a href="shortcode.html"> <i class="fa  fa-cubes"></i> Shortcode </a></li>
                                 </ul><!-- /.sub-menu -->
                             </li><!-- /.has-sub-menu -->
 
@@ -371,46 +398,46 @@
                             </li><!-- /.mega-menu -->
 
                             <li>
-                                <a href="#"><div>Contact</div></a>
+                                <a href="#"><div>RailTalk</div></a>
                             </li>
                         </ul><!-- /.main-menu -->
-                        <!-- Top Cart  -->
-                        <div id="top-cart">
-                            <a href="#" id="top-cart-trigger" class="hd-icons">
-                                <i class="fa fa-shopping-cart"></i><span>5</span>
-                            </a>
-                            <div class="top-cart-content">
-                                <div class="top-cart-title">
-                                    <h4>Shopping Cart</h4>
-                                </div>
-                                <div class="top-cart-items">
-                                    <div class="top-cart-item clearfix">
-                                        <div class="top-cart-item-image">
-                                            <a href="#"><img src="images/menu/item-01.jpg" alt="Blue Round-Neck Tshirt" /></a>
+                        @*<!-- Top Cart  -->
+                            <div id="top-cart">
+                                <a href="#" id="top-cart-trigger" class="hd-icons">
+                                    <i class="fa fa-shopping-cart"></i><span>5</span>
+                                </a>
+                                <div class="top-cart-content">
+                                    <div class="top-cart-title">
+                                        <h4>Shopping Cart</h4>
+                                    </div>
+                                    <div class="top-cart-items">
+                                        <div class="top-cart-item clearfix">
+                                            <div class="top-cart-item-image">
+                                                <a href="#"><img src="images/menu/item-01.jpg" alt="Blue Round-Neck Tshirt" /></a>
+                                            </div>
+                                            <div class="top-cart-item-desc">
+                                                <a href="#">Blue Round-Neck Tshirt</a>
+                                                <span class="top-cart-item-price">$19.99</span>
+                                                <span class="top-cart-item-quantity">x 2</span>
+                                            </div>
                                         </div>
-                                        <div class="top-cart-item-desc">
-                                            <a href="#">Blue Round-Neck Tshirt</a>
-                                            <span class="top-cart-item-price">$19.99</span>
-                                            <span class="top-cart-item-quantity">x 2</span>
+                                        <div class="top-cart-item clearfix">
+                                            <div class="top-cart-item-image">
+                                                <a href="#"><img src="images/menu/item-02.jpg" alt="Light Blue Denim Dress" /></a>
+                                            </div>
+                                            <div class="top-cart-item-desc">
+                                                <a href="#">Light Blue Denim Dress</a>
+                                                <span class="top-cart-item-price">$24.99</span>
+                                                <span class="top-cart-item-quantity">x 3</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="top-cart-item clearfix">
-                                        <div class="top-cart-item-image">
-                                            <a href="#"><img src="images/menu/item-02.jpg" alt="Light Blue Denim Dress" /></a>
-                                        </div>
-                                        <div class="top-cart-item-desc">
-                                            <a href="#">Light Blue Denim Dress</a>
-                                            <span class="top-cart-item-price">$24.99</span>
-                                            <span class="top-cart-item-quantity">x 3</span>
-                                        </div>
+                                    <div class="top-cart-action clearfix">
+                                        <span class="fleft top-checkout-price">$114.95</span>
+                                        <button class="btn sm-btn has-badge">View Cart</button>
                                     </div>
                                 </div>
-                                <div class="top-cart-action clearfix">
-                                    <span class="fleft top-checkout-price">$114.95</span>
-                                    <button class="btn sm-btn has-badge">View Cart</button>
-                                </div>
-                            </div>
-                        </div><!-- #top-cart end -->
+                            </div><!-- #top-cart end -->*@
                         <!-- Top Search  -->
                         <div id="top-search">
                             <a href="#" id="top-search-trigger" class="hd-icons">
@@ -429,7 +456,7 @@
     </header><!-- /#header -->
     <!-- Header Section End -->
     @RenderBody()
-    
+
 
 
     <!-- Footer Section  -->
@@ -443,18 +470,18 @@
                     <div class="callout-content relative section-padding bp0 clearfix">
                         <div class="col-md-8">
                             <div class="row">
-                                <h2>Are You Satisfied With The High Quality & Unlimited Features ?</h2>
+                                <h2>Are You Convinced? Then you owe me a fucking blow job, now getthefuckouttahere</h2>
                                 <div class="action-links">
                                     <a href="#">Contact Us <i class="fa fa-envelope"></i> </a>
-                                    <span class="or">or</span>
-                                    <a href="#"> Purchase Focuz Now <i class="fa fa-shopping-cart"></i></a>
+                                    @*<span class="or">or</span>
+                                        <a href="#"> View Our  <i class="fa fa-shopping-cart"></i></a>*@
                                 </div><!--  /.action-links -->
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="row">
-                                <img class="callout-background pull-right" src="images/footer/home-man.png" alt="Footer Image">
+                                <img class="callout-background pull-right" src="images/footer/railgun177w.png" alt="Footer Image">
                             </div>
                         </div>
                     </div><!--  /.callout-content -->
@@ -545,12 +572,12 @@
                                     </h4>
                                 </div>
                                 <p>
-                                    Phasellus vecula justo eget diam pose sollicitudin eu urna tincidunt nulla. Curabitur eleifend urna tempor magna, in scelerisque volutpat.
+                                    Agile IT systems design and development specifically for small/medium businesses. We build the plaform to enable your company to respond in the modern business environment.
                                 </p>
                                 <ul class="contact-info">
-                                    <li class="fa-envelope"><a href="mailto:sample@focuz.com">sample@focuz.com</a></li>
-                                    <li class="fa-phone">+1 911 (77) 222-1111</li>
-                                    <li class="fa-map-marker">Timposn St, Suite 247, USA, GA 222</li>
+                                    <li class="fa-envelope"><a href="mailto:info@railgunit.com">info@railgunit.com</a></li>
+                                    <li class="fa-phone">+44 7976-278909 </li>
+                                    <li class="fa-map-marker">1 Maverick Place, Suite 247, London, EC1 2TF</li>
                                 </ul><!-- /.contact-info -->
                             </aside><!--  /.widget -->
                         </div><!-- /.col-md-3 -->
@@ -560,7 +587,7 @@
                             <aside class="widget widget_recent_posts">
                                 <div class="stripe-full">
                                     <h4 class="widget-title stripe-over stripe-blue">
-                                        Recent Posts
+                                        Recent Projects
                                     </h4>
                                 </div>
 
@@ -570,9 +597,9 @@
                                             <a href="#"><img src="images/footer/recent-post/1.jpg" alt="Recent Post Image"></a>
                                         </div>
                                         <div class="rp-txt">
-                                            <span class="entry-title"><a href="#">Better user experiences</a></span>
-                                            <span class="author vcard">by <a href="#">Focuz</a></span>
-                                            <span class="entry-date"><time datetime="2014-05-29T07:30:55+00:00">05/29/14</time></span>
+                                            <span class="entry-title"><a href="#">Geckoboard - GrindAndCo</a></span>
+                                            <span class="author vcard">by <a href="~/Home">Railgun</a></span>
+                                            <span class="entry-date"><time datetime="@DateTime.Now.AddDays(60)">@DateTime.Now.AddDays(-60).ToString("dd-MM-yyyy")</time></span>
                                         </div>
                                     </li>
 
@@ -581,9 +608,9 @@
                                             <a href="#"><img src="images/footer/recent-post/2.jpg" alt="Recent Post Image"></a>
                                         </div>
                                         <div class="rp-txt">
-                                            <span class="entry-title"><a href="#">The Latest Trends & Techs</a></span>
-                                            <span class="author vcard">by <a href="#">Focuz</a></span>
-                                            <span class="entry-date"><time datetime="2014-05-29T07:30:55+00:00">05/29/14</time></span>
+                                            <span class="entry-title"><a href="#">Case Management And Website - PHR</a></span>
+                                            <span class="author vcard">by <a href="#">Railgun</a></span>
+                                            <span class="entry-date"><time datetime="2014-05-29T07:30:55+00:00">@DateTime.Now.AddDays(-160).ToString("dd-MM-yyyy")</time></span>
                                         </div>
                                     </li>
                                 </ul><!-- /.recentposts -->
@@ -596,31 +623,26 @@
                             <aside class="widget widget_twitter_feeds">
                                 <div class="stripe-full">
                                     <h4 class="widget-title stripe-over stripe-blue">
-                                        Twitter Feeds
+                                        GitHub Repos
                                     </h4>
                                 </div>
 
                                 <ul class="twitter-feeds">
                                     <li>
                                         <div class="tweet">
-                                            Phasellus vehicul just egediam posuere sollicitudin.
-                                            <a href="#">http://enva.to/GC58F</a>
+                                            Like coding? Got skills? Come and help us devlop.
+                                            <a href="#">https://github.com/nadavdrewe</a>
 
                                             <span class="tweet-time">
-                                                2 min ago
+                                                Last repo push
+                                                @{
+                                                    var rnd = new Random();
+                                                    @rnd.Next(5, 320);
+                                                } minutes ago
                                             </span>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="tweet">
-                                            Phasellus vehicul just egediam posuere sollicitudin.
-                                            <a href="#">http://enva.to/GC58F</a>
 
-                                            <span class="tweet-time">
-                                                2 min ago
-                                            </span>
-                                        </div>
-                                    </li>
                                 </ul><!-- /.twitter-feeds -->
 
 
@@ -637,7 +659,7 @@
                                 </div>
 
                                 <p>
-                                    Curabitur eleifend urna tempor magna, in sceler volutpat honcus faucibus. Nam dapibus mollis.
+                                    We're having ideas. If you want to know about them, we'd love to tell you.
                                 </p>
 
                                 <form class="subscirbe-form" action="#" method="post">
@@ -670,13 +692,16 @@
                     </div><!-- /.footer-menu -->
 
                     <div class="copyrights lrp15">
-                        Copyright &copy;  2015 <a href="#">Focuz</a> -  Developed by <a href="http://www.codexcoder.com">CodexCoder</a>
+                        Copyright &copy; @DateTime.Now.Year <a href="#">Railgun.it</a> -  Developed by <a href="http://www.railgunit.com">using Railgun</a>
                     </div><!-- /.copyrights -->
                 </div><!-- /.container -->
             </div><!-- /.footer-container -->
         </footer>
     </div><!-- /.site-footer -->
     <!-- Footer Section End -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="~/Scripts/Angular/headerController.js"></script>
 
 
     <script src="~/assets/js/jquery-1.11.1.min.js"></script>
@@ -693,55 +718,58 @@
     <script src="~/assets/js/jquery.parallax.js"></script>
     <script src="~/assets/js/jquery.fs.boxer.min.js"></script>
     <script src="~/assets/js/wow.min.js"></script>
+    <script src="~/Scripts/jquery.dotdotdot.min.js"></script>
 
     <script src="~/assets/masterslider/jquery.easing.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    
 
     <!-- Master Slider -->
     <script src="~/assets/masterslider/masterslider.min.js"></script>
 
     <script type="text/javascript">
 
-    (function ($) {
-        "use strict";
-        $(function () {
-            var focuzSlider = new MasterSlider();
-            // slider controls
-            focuzSlider.control('arrows');
-            focuzSlider.control('timebar' , {insertTo:'#focuz-main-slider'});
-            //focuzSlider.control('bullets');
-            // slider setup
-            focuzSlider.setup("focuz-main-slider", {
-                width           : 1140,
-                height          : 600,
-                space           : 0,
-                start           : 1,
-                layout          :'fullwidth',
-                loop            : true,
-                preload         : 0,
-                autoplay        : true,
-                centerControls  : false,
-                view            : "mask"
+        (function ($) {
+            "use strict";
+            $(function () {
+                var focuzSlider = new MasterSlider();
+                // slider controls
+                focuzSlider.control('arrows');
+                focuzSlider.control('timebar', { insertTo: '#focuz-main-slider' });
+                //focuzSlider.control('bullets');
+                // slider setup
+                focuzSlider.setup("focuz-main-slider", {
+                    width: 1140,
+                    height: 600,
+                    space: 0,
+                    start: 1,
+                    layout: 'fullwidth',
+                    loop: true,
+                    preload: 0,
+                    autoplay: true,
+                    centerControls: false,
+                    view: "mask"
+                });
+
+                // MSScrollParallax.setup( focuzSlider, 30, 50, true );
+                // window.masterslider_instances = window.masterslider_instances || {};
+                // window.masterslider_instances["2_d4ec"] = focuzSlider;
             });
 
-            // MSScrollParallax.setup( focuzSlider, 30, 50, true );
-            // window.masterslider_instances = window.masterslider_instances || {};
-            // window.masterslider_instances["2_d4ec"] = focuzSlider;
-        });
-
-        var clientReview = new MasterSlider();
-        clientReview.setup('client-review-slider' , {
-            loop:true,
-            width:100,
-            height:100,
-            speed:50,
-            view:'focus',
-            preload:'all',
-            space:10,
-            wheel:true
-        });
-        clientReview.control('arrows',{insertTo:'#client-review-nav', autohide:false});
-        clientReview.control('slideinfo',{insertTo:'#client-review-info'});
-    })(jQuery);
+            var clientReview = new MasterSlider();
+            clientReview.setup('client-review-slider', {
+                loop: true,
+                width: 100,
+                height: 100,
+                speed: 50,
+                view: 'focus',
+                preload: 'all',
+                space: 10,
+                wheel: true
+            });
+            clientReview.control('arrows', { insertTo: '#client-review-nav', autohide: false });
+            clientReview.control('slideinfo', { insertTo: '#client-review-info' });
+        })(jQuery);
 
     </script>
     <script src="~/assets/js/custom.js"></script>
@@ -756,7 +784,7 @@
 
     <script type="text/javascript">
 
-        $(function(){
+        $(function () {
             var hsort_flg = false;
 
             //setup
@@ -773,12 +801,21 @@
                 }
             });
 
-            $(window).load(function(e){
+            $(window).load(function (e) {
                 vg.vgrefresh();
             });
 
         });
 
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".dotdot").dotdotdot({
+                //	configuration goes here
+                ellipsis: '... '
+            });
+        });
     </script>
 
 </body>

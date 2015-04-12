@@ -1,0 +1,35 @@
+﻿using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using web.railgun.com.Models.Mapping;
+using web.railgun.com.Models.Configuration;
+
+namespace web.railgun.com.Models
+{
+    public partial class railgunContext : DbContext
+    {
+        static railgunContext()
+        {
+            Database.SetInitializer<railgunContext>(null);
+        }
+
+        public railgunContext()
+            : base("Name=railgunContext")
+        {
+        }
+        public DbSet<AspNetRole> AspNetRoles { get; set; }
+        public DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public DbSet<AspNetUser> AspNetUsers { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new AspNetRoleMap());
+            modelBuilder.Configurations.Add(new AspNetUserClaimMap());
+            modelBuilder.Configurations.Add(new AspNetUserLoginMap());
+            modelBuilder.Configurations.Add(new AspNetUserMap());
+            modelBuilder.Configurations.Add(new ProjectConfiguration());
+        }
+    }
+}
