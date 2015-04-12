@@ -32,7 +32,7 @@ namespace web.railgun.com.Controllers
         }
 
         
-        public ActionResult Project(int ProjectId)
+        public ActionResult Project(int ProjectId = 4)
         {
             var model = db.Projects.Find(ProjectId);
             return View(model);
