@@ -11,6 +11,7 @@ namespace web.railgun.com.Models
         [Key]
         public int CategoryId { get; set; }
         public string Name { get; set; }
+        public string BuildSynopsis { get; set; }
 
         public virtual ICollection<Project> Projects { get; set; }
     }

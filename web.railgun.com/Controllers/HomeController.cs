@@ -23,6 +23,7 @@ namespace web.railgun.com.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.Categories = db.Categories.ToList();
             return View();
         }
 
@@ -66,6 +67,7 @@ namespace web.railgun.com.Controllers
 
         public ActionResult WhatWeDo()
         {
+            ViewBag.Categories = db.Categories.ToList();
             return View();
         }
 

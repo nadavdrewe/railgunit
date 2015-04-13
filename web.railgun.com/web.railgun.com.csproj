@@ -566,6 +566,8 @@
     <Content Include="images\ProjectImages\PHR\graphic2.jpg" />
     <Content Include="images\ProjectImages\Xero\graphic1.jpg" />
     <Content Include="images\ProjectImages\Xero\graphic2.jpg" />
+    <Content Include="images\ProjectLogos\80px\grind80.png" />
+    <Content Include="images\ProjectLogos\80px\IR.png" />
     <Content Include="images\ProjectLogos\Aquarium\logo.png" />
     <Content Include="images\ProjectLogos\CRIF\logo.png" />
     <Content Include="images\ProjectLogos\DC\logo.png" />
@@ -773,6 +775,7 @@
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\Pricing.cshtml" />
     <Content Include="Views\Home\Operations.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
