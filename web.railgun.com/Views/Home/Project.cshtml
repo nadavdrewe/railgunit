@@ -3,6 +3,8 @@
 
 @{
     ViewBag.Title = "Project";
+
+    var projects = (IEnumerable<Project>)ViewBag.Projects;
 }
 
 <!-- Page Header Section  -->
@@ -81,7 +83,7 @@
                                         </li>
                                     </ul>
                                     <div>
-                                        <a href="@Model.ProjectURL" class="btn full-btn md-btn"> Launch Project <i class="fa fa-rocket"></i></a>
+                                        <a href="@Model.ProjectURL" class="btn full-btn md-btn"> Launch Project Website <i class="fa fa-rocket"></i></a>
                                     </div>
                                     <div>
                                         <a href="@Model.GitRepo" class="btn full-btn md-btn">GitHub <i class="fa fa-github"></i></a>
@@ -91,34 +93,69 @@
                         </div><!-- /.col-md-12 -->
 
                         <div class="col-md-12">
+                            <div class="row">
+                                <div class="stripe-full bm50">
+                                    <h4 class="stripe-over stripe-blue tm0">
+                                        Project <span>Description</span>
+                                    </h4>
+                                </div><!-- /.stripe-full -->
 
-                            <div class="stripe-full bm50">
-                                <h4 class="stripe-over stripe-blue tm0">
-                                    Project <span>Description</span>
-                                </h4>
-                            </div><!-- /.stripe-full -->
+                                <div class="post-container project-description">
+                                    <p>
+                                        @Html.Raw(Model.Description)
+                                    </p>
+                                </div><!-- /.project-description -->
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-md-2 col-md-offset-5">
+                                        <div class="row text-center">
+                                            <h4 class="stripe-over stripe-blue tm0">
+                                                Company <span>Synopsis</span>
+                                            </h4>
+                                            <br />
+                                        </div>
+                                        <div class="row text-center">
+                                            <a href="@Model.CompanyURL">
+                                                <img class="portfolio-item" style="padding:10px;padding-top:30px; padding-bottom:25px" src="@Model.Logo" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
 
-                            <div class="post-container project-description">
-                                <p>
-                                  @Html.Raw(Model.Description)
-                                </p>
-                            </div><!-- /.project-description -->
+                                <div class="post-container project-description">
+
+                                    <p>
+                                        @Html.Raw(Model.CompanyDescription)
+                                    </p>
+                                </div><!-- /.project-description -->
 
 
-                        </div><!-- /.col-md-12 -->
 
-                    </div><!-- /.row -->
 
-                </div><!-- /.item -->
 
-            </div><!-- /#portfolio-item -->
-        </div><!-- /.section-padding -->
-    </div><!-- /.container -->
+                            </div><!-- /.col-md-12 -->
+
+
+
+
+
+
+
+
+                        </div><!-- /.row -->
+
+                    </div><!-- /.item -->
+
+                </div><!-- /#portfolio-item -->
+            </div><!-- /.section-padding -->
+        </div><!-- /.container -->
 </section><!-- /#works -->
 <!-- Works Section End -->
 
 <hr>
-
 
 <section>
     <div class="section-padding">
@@ -140,15 +177,15 @@
                             </a>
                         </li>
                         @*<li>
-                            <a href="#">
-                                <div class="icon-content fa-google-plus">Google Plus</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="icon-content fa-pinterest">Pinterest</div>
-                            </a>
-                        </li>*@
+                                <a href="#">
+                                    <div class="icon-content fa-google-plus">Google Plus</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="icon-content fa-pinterest">Pinterest</div>
+                                </a>
+                            </li>*@
                     </ul>
                 </div><!-- /.social-icons -->
             </div>
@@ -171,7 +208,7 @@
                     <span class="stripe-t-right"></span>
                 </h2>
                 <p class="section-description">
-                    We do love to work, here are some numbers from the past 24 hours:
+                    The Railgun Team love to work, here are some of our numbers from the past 24 hours:
                 </p>
             </div><!-- /.title-container -->
 
@@ -183,7 +220,7 @@
                             <p class="stripe-bfixw fact-count">
                                 @{
                                     var rand = new Random();
-                                    rand.Next(8, 22);
+                                    @rand.Next(8, 22);
                                 }
                             </p>
                             <h6 class="fact-details">Repository check-ins</h6>
@@ -196,7 +233,7 @@
                     <div class="item lrp15">
                         <div class="fact-item  text-center">
                             <p class="stripe-bfixw fact-count">
-                                @rand.Next(40, 65);
+                                @rand.Next(40, 65)
                             </p>
                             <h6 class="fact-details">Average Hours of Work</h6>
                             <div class="fact-icon">
@@ -208,7 +245,7 @@
                     <div class="item lrp15">
                         <div class="fact-item  text-center">
                             <p class="stripe-bfixw fact-count">
-                                @rand.Next(13, 25);
+                                @rand.Next(13, 25)
                             </p>
                             <h6 class="fact-details">Solved Tickets</h6>
                             <div class="fact-icon">
@@ -224,7 +261,8 @@
                             </p>
                             <h6 class="fact-details">Cups of Earl Grey </h6>
                             <div class="fact-icon">
-                                <i class="fa fa-thumbs-up"></i>
+                                <i class="fa fa-coffee"></i>
+
                             </div>
                         </div><!-- /.fact-item -->
                     </div><!-- /.item -->
@@ -232,11 +270,11 @@
                     <div class="item lrp15">
                         <div class="fact-item  text-center">
                             <p class="stripe-bfixw fact-count">
-                                @rand.Next(4, 15);
-                            </p
-                            <h6 class="fact-details">Hours wasted playing Dota2</h6>
+                                @rand.Next(4, 15)
+                            </p>
+                            <h6 class="fact-details">Hours playing Dota2</h6>
                             <div class="fact-icon">
-                                <i class="fa fa-coffee"></i>
+                                <i class="fa fa-thumbs-up"></i>
                             </div>
                         </div><!-- /.fact-item -->
                     </div><!-- /.item -->
@@ -248,151 +286,53 @@
 </section><!-- /#companyFacts -->
 
 
-<hr>
 
 
-
-<section id="team">
-    <div class="section-padding">
-        <div class="container">
+<section id="clients" class="clearfix clients">
+    <div class="container">
+        <div class="section-padding tp0">
+            <hr>
+            <br />
+            <hr>
+            <br />
             <div class="title-container text-center">
-                <h2 class="striped-title">
-                    related <span>works</span> to this project
+                <h2 class="striped-title tm0">
+                    our happy <span>clients</span>
                     <span class="stripe-t-left"></span>
                     <span class="stripe-t-back"></span>
                     <span class="stripe-t-right"></span>
                 </h2>
                 <p class="section-description">
-                    We’re some creative people with powerful knowledge & awesome skills behind the scene bringing you the bests.
+                    We tend to work for innovative, disruptive businesses, all of whom are repeat clients. Ask them about how Railgun.it projects helped their business!
                 </p>
             </div><!-- /.title-container -->
-            <div class="row">
-                <div class="owl-container">
-                    <div class="carousel-navigator text-center bm30">
-                        <button class="btn nav-btn sm-btn rbtn prev tmprev"><i class="fa fa-long-arrow-left"></i></button>
-                        <button class="btn nav-btn sm-btn rbtn next tmnext"><i class="fa fa-long-arrow-right"></i></button>
-                    </div>
 
 
-                    <div id="teamSlider" class="owl-carousel owl-theme portfolio-item v2" data-pagination="false" data-screenitems="[[0, 1], [600, 2], [1000, 3], [1200, 4]]" data-items="4" data-autoplay="3000">
-                        <div class="item lrp15">
-                            <figure>
-                                <img src="images/portfolio/1.jpg" alt="Item 3">
-                                <div class="item-link">
-                                    <a class="project-link" href="#"><i class="fa fa-link"></i></a>
-                                    <a class="zoom-link boxer" href="images/lightbox/01.jpg" title="Portfolio Image Title"><i class="fa fa-search-plus"></i></a>
-                                </div><!-- /.item-link -->
-                                <figcaption class="item-description">
-                                    <h4 class="item-title">
-                                        Corporate Brochure
-                                    </h4><!-- /.item-title -->
-                                    <span class="item-category">
-                                        Agency, Business
-                                        <span class="numbers"> 138 <i class="fa fa-heart"></i> </span>
-                                    </span><!-- /.item-category -->
-                                </figcaption>
-                            </figure>
-                        </div><!-- /.item -->
+            <div class="owl-container">
+                <div class="carousel-navigator text-center">
+                    <button class="btn nav-btn sm-btn rbtn prev"><i class="fa fa-long-arrow-left"></i></button>
+                    <button class="btn nav-btn sm-btn rbtn next"><i class="fa fa-long-arrow-right"></i></button>
+                </div>
+                <div id="clients-logo-carousel" class="logo-carousel owl-carousel pt50" data-pagination="false" data-screenitems="[[0, 1], [400, 2], [700, 3], [1000, 5], [1200, 6]]" data-items="6" data-autoplay="3000">
 
-                        <div class="item lrp15">
-                            <figure>
-                                <img src="images/portfolio/2.jpg" alt="Item 3">
-                                <div class="item-link">
-                                    <a class="project-link" href="#"><i class="fa fa-link"></i></a>
-                                    <a class="zoom-link boxer" href="images/lightbox/01.jpg" title="Portfolio Image Title"><i class="fa fa-search-plus"></i></a>
-                                </div><!-- /.item-link -->
-                                <figcaption class="item-description">
-                                    <h4 class="item-title">
-                                        Corporate Brochure
-                                    </h4><!-- /.item-title -->
-                                    <span class="item-category">
-                                        Agency, Business
-                                        <span class="numbers"> 138 <i class="fa fa-heart"></i> </span>
-                                    </span><!-- /.item-category -->
-                                </figcaption>
-                            </figure>
-                        </div><!-- /.item -->
+                    @{
+                        foreach (var project in projects)
+                        {
+                            <div class="item">
+                                <div class="item-content">
+                                    <a href="@project.CompanyURL">
+                                        <img src="@project.Logo" alt="@project.Name Logo">
+                                    </a>
+                                </div>
+                            </div>
 
-                        <div class="item lrp15">
-                            <figure>
-                                <img src="images/portfolio/3.jpg" alt="Item 3">
-                                <div class="item-link">
-                                    <a class="project-link" href="#"><i class="fa fa-link"></i></a>
-                                    <a class="zoom-link boxer" href="images/lightbox/01.jpg" title="Portfolio Image Title"><i class="fa fa-search-plus"></i></a>
-                                </div><!-- /.item-link -->
-                                <figcaption class="item-description">
-                                    <h4 class="item-title">
-                                        Corporate Brochure
-                                    </h4><!-- /.item-title -->
-                                    <span class="item-category">
-                                        Agency, Business
-                                        <span class="numbers"> 138 <i class="fa fa-heart"></i> </span>
-                                    </span><!-- /.item-category -->
-                                </figcaption>
-                            </figure>
-                        </div><!-- /.item -->
+                        }
+                    }
 
-                        <div class="item lrp15">
-                            <figure>
-                                <img src="images/portfolio/4.jpg" alt="Item 3">
-                                <div class="item-link">
-                                    <a class="project-link" href="#"><i class="fa fa-link"></i></a>
-                                    <a class="zoom-link boxer" href="images/lightbox/01.jpg" title="Portfolio Image Title"><i class="fa fa-search-plus"></i></a>
-                                </div><!-- /.item-link -->
-                                <figcaption class="item-description">
-                                    <h4 class="item-title">
-                                        Corporate Brochure
-                                    </h4><!-- /.item-title -->
-                                    <span class="item-category">
-                                        Agency, Business
-                                        <span class="numbers"> 138 <i class="fa fa-heart"></i> </span>
-                                    </span><!-- /.item-category -->
-                                </figcaption>
-                            </figure>
-                        </div><!-- /.item -->
+                </div><!-- /#clients-logo-carousel -->
 
-                        <div class="item lrp15">
-                            <figure>
-                                <img src="images/portfolio/5.jpg" alt="Item 3">
-                                <div class="item-link">
-                                    <a class="project-link" href="#"><i class="fa fa-link"></i></a>
-                                    <a class="zoom-link boxer" href="images/lightbox/01.jpg" title="Portfolio Image Title"><i class="fa fa-search-plus"></i></a>
-                                </div><!-- /.item-link -->
-                                <figcaption class="item-description">
-                                    <h4 class="item-title">
-                                        Corporate Brochure
-                                    </h4><!-- /.item-title -->
-                                    <span class="item-category">
-                                        Agency, Business
-                                        <span class="numbers"> 138 <i class="fa fa-heart"></i> </span>
-                                    </span><!-- /.item-category -->
-                                </figcaption>
-                            </figure>
-                        </div><!-- /.item -->
+            </div><!-- /.owl-slider -->
 
-                        <div class="item lrp15">
-                            <figure>
-                                <img src="images/portfolio/6.jpg" alt="Item 3">
-                                <div class="item-link">
-                                    <a class="project-link" href="#"><i class="fa fa-link"></i></a>
-                                    <a class="zoom-link boxer" href="images/lightbox/01.jpg" title="Portfolio Image Title"><i class="fa fa-search-plus"></i></a>
-                                </div><!-- /.item-link -->
-                                <figcaption class="item-description">
-                                    <h4 class="item-title">
-                                        Corporate Brochure
-                                    </h4><!-- /.item-title -->
-                                    <span class="item-category">
-                                        Agency, Business
-                                        <span class="numbers"> 138 <i class="fa fa-heart"></i> </span>
-                                    </span><!-- /.item-category -->
-                                </figcaption>
-                            </figure>
-                        </div><!-- /.item -->
-
-                    </div><!-- /#teamSlider -->
-                </div><!-- /.owl-slider -->
-
-            </div><!-- /.row -->
         </div><!-- /.section-padding -->
     </div><!-- /.container -->
-</section><!-- /#team -->
+</section><!-- /#clients -->

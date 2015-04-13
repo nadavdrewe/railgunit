@@ -14,7 +14,8 @@
     var class2_2 = "col-md-4 pull-right md-no-pull";
 
     var standardAjaxOps = new AjaxOptions { InsertionMode = InsertionMode.Replace, HttpMethod = "POST" };
-
+ 
+    
 }
 <!-- Page Header Section  -->
 <section id="site-page-header" class="site-page-header blog-header polygon-bg">
@@ -182,7 +183,10 @@
                                         </li>
                                     </ul>
                                     <div>
-                                        <a href="@project.ProjectURL" class="btn full-btn md-btn">Launch Project <i class="fa fa-rocket"></i></a>
+                                        <a href="@project.ProjectURL" class="btn full-btn md-btn">Launch Project Website <i class="fa fa-rocket"></i></a>
+                                    </div>
+                                    <div>
+                                        <a href="~/Home/Project?ProjectId=@project.ProjectId" class="btn full-btn md-btn">Read More <i class="fa fa-search"></i></a>
                                     </div>
                                 </div><!-- /.col-md-4 -->
                             </div><!-- /.row -->
@@ -202,9 +206,6 @@
     </div><!-- /.container -->
 </section><!-- /#works -->
 <!-- Works Section End -->
-
-
-
 
 
 <section id="clients" class="clearfix clients">
@@ -235,7 +236,7 @@
                         {
                             <div class="item">
                                 <div class="item-content">
-                                    <a href="?itemlink">
+                                    <a href="@project.CompanyURL">
                                         <img src="@project.Logo" alt="@project.Name Logo">
                                     </a>
                                 </div>
@@ -251,3 +252,7 @@
         </div><!-- /.section-padding -->
     </div><!-- /.container -->
 </section><!-- /#clients -->
+
+
+
+

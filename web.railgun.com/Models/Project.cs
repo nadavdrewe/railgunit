@@ -26,6 +26,8 @@ namespace web.railgun.com.Models
         public string GraphicTiny { get; set; }
         public string Logo { get; set; }
         public string GitRepo { get; set; }
+        public string CompanyURL { get; set; }
+        public string CompanyDescription { get; set; }
 
         //foriegn keys
         public int CategoryId { get; set; }

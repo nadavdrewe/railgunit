@@ -770,6 +770,9 @@
     <Content Include="Views\Home\RailFare.cshtml" />
     <Content Include="Views\WhatWeOffer.cshtml" />
     <Content Include="Views\Home\RenderMenu.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\Pricing.cshtml" />
+    <Content Include="Views\Home\Operations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -26,22 +26,28 @@ namespace web.railgun.com.Controllers
             return View();
         }
 
+        public ActionResult Services()
+        {
+            return View();
+        }
+
         public ActionResult Portfolio()
         {
             return View();
         }
 
-        
+
         public ActionResult Project(int ProjectId = 4)
         {
+            ViewBag.Projects = db.Projects.ToList().OrderByDescending(x => x.DateInitiated);
+
             var model = db.Projects.Find(ProjectId);
             return View(model);
         }
 
         public ActionResult Projects()
         {
-            var projects = db.Projects.ToList().OrderByDescending(x=>x.DateInitiated);
-
+            var projects = db.Projects.ToList().OrderByDescending(x => x.DateInitiated);
             ViewBag.Categories = db.Categories.ToList();
 
             return View(projects);
@@ -51,7 +57,7 @@ namespace web.railgun.com.Controllers
         [HttpPost]
         public ActionResult Projects(int id)
         {
-            var projects = db.Projects.Where(x=>x.CategoryId.Equals(id)).ToList().OrderByDescending(x => x.DateInitiated);
+            var projects = db.Projects.Where(x => x.CategoryId.Equals(id)).ToList().OrderByDescending(x => x.DateInitiated);
             ViewBag.Categories = db.Categories.ToList();
 
             return View(projects);
@@ -79,7 +85,7 @@ namespace web.railgun.com.Controllers
         }
 
 
-     
-     
+
+
     }
 }
