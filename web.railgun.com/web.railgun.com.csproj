@@ -248,6 +248,8 @@
     <Content Include="assets\images\pattern\box.png" />
     <Content Include="assets\images\polygon-bg.jpg" />
     <Content Include="assets\images\railgunlogo.png" />
+    <Content Include="assets\images\railgunlogoBlue.png" />
+    <Content Include="assets\images\railgunlogoBlueSmall.png" />
     <Content Include="assets\images\railgunlogoSmallGreen.png" />
     <Content Include="assets\js\custom.js" />
     <Content Include="assets\js\email-validation.js" />
