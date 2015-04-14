@@ -1,5 +1,6 @@
 ﻿@using web.railgun.com.Models
 
+
 <!-- Slider Section -->
 <section id="slider" class="slider-section">
     <!-- MasterSlider -->
@@ -447,9 +448,9 @@
             <div class="callout-content relative section-padding bp0 clearfix">
                 <div class="col-md-8">
                     <div class="row">
-                        <h1>Dammit Jim, I'm a entrepreneur not an <span>accountant!</span></h1>
+                        <h1>Off-the-rack IT solutions? One size fits all? <span>Oh dear.</span></h1>
                         <p class="action-description">
-                            Worried about how much this is going to cost? Don't be. We price by feature - only pay for what you need!
+                            the modern business tech-environment is a jungle - Don't get caught without your <span style="color:#00a1cb">Railgun!</span>
                         </p>
 
                     </div><!-- /.row -->
@@ -466,9 +467,36 @@
 </section>
 <!-- Action Section  End -->
 @{
-    Html.RenderPartial("~/Views/Home/Products.cshtml",  (IEnumerable<Category>) ViewBag.Categories);
-    <hr />
+    Html.RenderPartial("~/Views/Home/Products.cshtml", (IEnumerable<Category>)ViewBag.Categories);
+    
+    <section id="top-action-section" class="callout-action top-part">
+        <div class="callout-action-area polygon-bg relative">
+            <div class="overlay-effects box-pattern"></div>
+            <div class="container">
+                <div class="callout-content relative section-padding bp0 clearfix">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <h1>Dammit Jim, I'm a entrepreneur not an <span>accountant!</span></h1>
+                            <p class="action-description">
+                                Worried about how much this is going to cost? Don't be. We price by feature - only <span style="color:#00a1cb">pay for what you need!</span>
+                            </p>
+
+                        </div><!-- /.row -->
+                    </div><!-- /.col-md-8 -->
+
+                    <div class="col-md-4 text-right">
+                        <a href="#" class="btn md-btn purchase">
+                            View Pricing <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    </div><!-- /.col-md-4 -->
+                </div><!--  /.callout-content -->
+            </div><!--  /.container -->
+        </div><!--  /.callout-action-area -->
+    </section>
+
+    
     Html.RenderPartial("~/Views/Home/Services.cshtml");
+    
     <hr />
     Html.RenderPartial("~/Views/Home/Pricing.cshtml");
 

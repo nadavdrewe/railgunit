@@ -10,24 +10,26 @@
     var att2 = "in active";
 }
 
-<div class="section-padding text-center">
-    <h1 class="tm0">Quality <em>ideas</em> + <em>talented programmers</em> + standarised working practices = <span>outstanding</span> systems </h1>
-    <p class="section-description">
-        Build the system your business needs with the features you want, all fully aligned to the latest development standards and technologies.
-    </p>
-    @*<div class="btn-container">
-        <a href="#" class="btn md-btn">
-            Contact Us Now <i class="fa fa-envelope"></i>
-        </a>
 
-        <a href="~/images/ProjectImages/GrindBackOfHouse/graphic1.jpg" class="btn md-btn">
-            Purchase it Now  <i class="fa fa-shopping-cart"></i>
-        </a>
-    </div>*@
-</div>
 
 <section id="more-service" class="bm50">
     <div class="container">
+        <div class="section-padding text-center">
+            <h1 class="tm0">Quality <em>ideas</em> + <em>talented programmers</em> + standarised working practices = <span>outstanding</span> systems </h1>
+            <p class="section-description">
+                Build the system your business needs with the features you want, all fully aligned to the latest development standards and technologies.
+            </p>
+            @*<div class="btn-container">
+                <a href="#" class="btn md-btn">
+                    Contact Us Now <i class="fa fa-envelope"></i>
+                </a>
+
+                <a href="~/images/ProjectImages/GrindBackOfHouse/graphic1.jpg" class="btn md-btn">
+                    Purchase it Now  <i class="fa fa-shopping-cart"></i>
+                </a>
+            </div>*@
+        </div>
+
         @*<div class="section-padding">
                 <div class="title-container text-center">
                     <h2 class="striped-title">
@@ -84,7 +86,7 @@ count1++;
                             <img class="tab-image pull-right" src="images/tab/tab-img.jpg" alt="tab-image">
                             <h4 class="tm0"><span>@cat.Name</h4>
                             <p>
-                                @cat.BuildSynopsis
+                                @Html.Raw(cat.BuildSynopsis)
                             </p>                           
                         </div>
 
