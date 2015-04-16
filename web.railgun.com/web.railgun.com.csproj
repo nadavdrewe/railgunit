@@ -199,7 +199,6 @@
     <Compile Include="Models\Mapping\AspNetUserClaimMap.cs" />
     <Compile Include="Models\Mapping\AspNetUserLoginMap.cs" />
     <Compile Include="Models\Mapping\AspNetUserMap.cs" />
-    <Compile Include="Models\Pricing.cs" />
     <Compile Include="Models\PricingTier.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\RailgunContext.cs" />

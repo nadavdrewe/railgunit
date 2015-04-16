@@ -13,9 +13,14 @@ namespace web.railgun.com.Models
 
         public int PricingTierId { get; set; }
         public string TierName { get; set; }
+        public string FromPrice { get; set; }
 
-        public virtual ICollection<Pricing> Pricings { get; set; }
 
+        public Nullable<int> CategoryId { get;set;}
+
+        public virtual Category Category { get; set; }
+
+        
 
     }
 }

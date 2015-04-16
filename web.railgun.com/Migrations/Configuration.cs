@@ -10,6 +10,7 @@ namespace web.railgun.com.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(web.railgun.com.Models.railgunContext context)

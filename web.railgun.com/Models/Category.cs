@@ -14,5 +14,8 @@ namespace web.railgun.com.Models
         public string BuildSynopsis { get; set; }
 
         public virtual ICollection<Project> Projects { get; set; }
+
+        public virtual ICollection<Feature> Features { get; set; }
+        public virtual ICollection<PricingTier> PricingTiers { get; set; }
     }
 }

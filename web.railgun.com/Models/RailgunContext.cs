@@ -30,6 +30,22 @@ namespace web.railgun.com.Models
             modelBuilder.Configurations.Add(new AspNetUserLoginMap());
             modelBuilder.Configurations.Add(new AspNetUserMap());
             modelBuilder.Configurations.Add(new ProjectConfiguration());
+
+
+            modelBuilder.Entity<Feature>()
+    .HasOptional(x => x.Category)
+    .WithMany()
+    .HasForeignKey(x => x.CategoryId);
+
+            modelBuilder.Entity<PricingTier>()
+    .HasOptional(x => x.Category)
+    .WithMany()
+    .HasForeignKey(x => x.CategoryId);
+
+
         }
+
+
+
     }
 }
