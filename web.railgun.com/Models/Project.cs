@@ -8,6 +8,17 @@ namespace web.railgun.com.Models
 {
     public partial class Project
     {
+        public Project()
+        {
+
+            //init default
+            if (this.InProgress == null)
+            {
+                this.InProgress = false;
+            }
+
+        }
+
         [Key]
         public int ProjectId { get; set; }
         public string Name { get; set; }
@@ -28,6 +39,8 @@ namespace web.railgun.com.Models
         public string GitRepo { get; set; }
         public string CompanyURL { get; set; }
         public string CompanyDescription { get; set; }
+
+        public Nullable<bool> InProgress { get; set; }
 
         //foriegn keys
         public int CategoryId { get; set; }

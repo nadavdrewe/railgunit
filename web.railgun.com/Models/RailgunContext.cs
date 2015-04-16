@@ -33,7 +33,7 @@ namespace web.railgun.com.Models
 
 
             modelBuilder.Entity<Feature>()
-    .HasOptional(x => x.Category)
+    .HasOptional(x => x.Category)    
     .WithMany()
     .HasForeignKey(x => x.CategoryId);
 

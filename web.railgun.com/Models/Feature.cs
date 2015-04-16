@@ -15,7 +15,7 @@ namespace web.railgun.com.Models
 
         public string SubDescription { get; set; }
 
-        public decimal FeatureSoloPrice { get;set;}
+        public Nullable<decimal> FeatureSoloPrice { get;set;}
 
 
         public Nullable<int> CategoryId { get; set; }
