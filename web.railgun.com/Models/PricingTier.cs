@@ -10,11 +10,9 @@ namespace web.railgun.com.Models
     {
 
         [Key]
-
         public int PricingTierId { get; set; }
         public string TierName { get; set; }
         public string FromPrice { get; set; }
-
 
         public Nullable<int> CategoryId { get;set;}
 

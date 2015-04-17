@@ -24,6 +24,7 @@ namespace web.railgun.com.Controllers
         public ActionResult Index()
         {
             ViewBag.Categories = db.Categories.ToList();
+            
             return View();
         }
 

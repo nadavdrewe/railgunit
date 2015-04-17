@@ -23,6 +23,8 @@ namespace web.railgun.com.Models
         public DbSet<Project> Projects { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+        public DbSet<PricingTier> PricingTiers { get; set; }
+        public DbSet<Feature> Features { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AspNetRoleMap());
