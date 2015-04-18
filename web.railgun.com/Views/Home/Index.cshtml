@@ -1,4 +1,5 @@
-﻿@using web.railgun.com.Models
+﻿@model IEnumerable<Category>
+@using web.railgun.com.Models
 
 
 <!-- Slider Section -->
@@ -467,7 +468,7 @@
 </section>
 <!-- Action Section  End -->
 @{
-    Html.RenderPartial("~/Views/Home/Products.cshtml", (IEnumerable<Category>)ViewBag.Categories);
+    Html.RenderPartial("~/Views/Home/Products.cshtml", Model);
 
     <section id="top-action-section" class="callout-action top-part">
         <div class="callout-action-area polygon-bg relative">
@@ -498,7 +499,7 @@
     Html.RenderPartial("~/Views/Home/Services.cshtml");
 
     <hr />
-    Html.RenderPartial("~/Views/Home/Pricing.cshtml");
+    Html.RenderPartial("~/Views/Home/Pricing.cshtml", Model.Where(x => x.CategoryId != 2).Where(x => x.CategoryId != 6), new ViewDataDictionary { { "pricings", ViewBag.Pricings } });
 
 }
 
@@ -509,7 +510,7 @@
         <div class="dark-bg">
             <div class="callout-content p30 lrp15 clearfix wow bounceInUp" data-wow-delay=".1s">
                 <div class="col-md-9">
-                    <h1 style="color:white">"Railgun got my online card sales project up and running from nothing in 13 days" - Tom Boating </h1>                    
+                    <h1 style="color:white">"Railgun got my online card sales project up and running from nothing in 13 days" - Tom Boating </h1>
                 </div><!-- /.col-md-9 -->
                 <div class="col-md-3 text-right">
                     <a href="#" class="btn md-btn purchase m0">

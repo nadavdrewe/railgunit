@@ -23,9 +23,10 @@ namespace web.railgun.com.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Categories = db.Categories.ToList();
-            
-            return View();
+            var model = db.Categories.ToList();
+            ViewBag.Pricings = db.PricingTiers.Include().ToList();
+
+            return View(model);
         }
 
         public ActionResult Services()
@@ -41,7 +42,7 @@ namespace web.railgun.com.Controllers
 
         public ActionResult Project(int ProjectId = 4)
         {
-            ViewBag.Projects = db.Projects.Where(x=>x.InProgress != true).ToList().OrderByDescending(x => x.DateInitiated);
+            ViewBag.Projects = db.Projects.Where(x => x.InProgress != true).ToList().OrderByDescending(x => x.DateInitiated);
 
             var model = db.Projects.Find(ProjectId);
             return View(model);
@@ -73,7 +74,7 @@ namespace web.railgun.com.Controllers
             return View("Projects", projects);
         }
 
-        
+
 
 
         public ActionResult WhatWeDo()
