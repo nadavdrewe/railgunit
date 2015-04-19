@@ -11,6 +11,7 @@ namespace web.railgun.com.Models
         [Key]
         public int TestimonialId { get; set; }
         public string Name { get; set; }
+        public string JobTitle { get; set; }
         public int StarRating { get; set; }
         public string ImageURL { get; set; }
         public string Text { get; set; }

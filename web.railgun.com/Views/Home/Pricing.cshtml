@@ -36,7 +36,7 @@
                             var catId = cat.CategoryId;
                             var href = "#ctab" + @catId;
 
-                            <li @if (tabCount.Equals(0)) { @Html.Raw("class='active'")                            }>
+                            <li @if (tabCount.Equals(0)) { @Html.Raw("class='active'")                             }>
 
                                 <span class="stripe-left"></span>
                                 <a href="@href" role="tab" data-toggle="tab" aria-expanded="true">@cat.Name</a>
@@ -148,7 +148,7 @@ tabCount++;
 
                                                                 @foreach (var feature in features.Where(x => x.PricingTierId.Equals(price.PricingTierId)))
                                                                 {
-                                                                    <li> <i class="fa fa-spinner fa-spin"></i> @feature.Description</li>
+                                                                    <li> <i class="fa fa-spinner fa-spin"></i> @feature.ShortDescription</li>
                                                                 }
                                                             </ul>
 
@@ -183,327 +183,149 @@ tabCount++;
 
 </section>
 
+<hr>
+
+<!-- Testimonial Section -->
+<section id="testimonial" class="pricing-section">
+    <div class="container">
+        <div class="section-padding">
+            <div class="title-container text-center">
+                <h2 class="striped-title">
+                    Positive <span> Testimonials </span>
+                    <span class="stripe-t-left"></span>
+                    <span class="stripe-t-back"></span>
+                    <span class="stripe-t-right"></span>
+                </h2>
+                <p class="section-description">
+                    We’ve worked for a lot of people and of course we’ve made them so happy! you can read some handpicked words about us here
+                </p>
+            </div><!-- /.title-container -->
+
+            <div class="owl-container">
+                <div class="carousel-navigator text-center">
+                    <button class="btn nav-btn sm-btn rbtn prev tprev"><i class="fa fa-long-arrow-left"></i></button>
+                    <button class="btn nav-btn sm-btn rbtn next tnext"><i class="fa fa-long-arrow-right"></i></button>
+                </div>
+
+                <div id="testimonialSlider" class="testimonial-slider owl-carousel p0 owl-theme" data-pagination="false" data-screenitems="[[0, 1], [600, 2], [1000, 3]]" data-items="4">
+
+                    <div class="item col-sm-12">
+                        <div class="testimonial-item">
+                            <div class="client-img">
+                                <img src="images/testimonials/1.jpg" alt="Client Image">
+                            </div><!-- /.client-img -->
+
+                            <div class="testimonial-txt text-center">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
+                                    eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
+                                </p>
+                            </div><!-- /.testimonial-txt -->
+
+                            <div class="testimonial-footer">
+                                <h6 class="inline clinet-name">Jimmy Doe</h6>
+                                <span class="client-company">Envato</span>
+
+                                <div class="client-rating pull-right">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-empty"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                            </div><!-- /.testimonial-footer -->
+                        </div><!-- /.testimonial-item -->
+                    </div><!-- /.item col-sm-12 -->
 
 
+                    <div class="item col-sm-12">
+                        <div class="testimonial-item">
+                            <div class="client-img">
+                                <img src="images/testimonials/2.jpg" alt="Client Image">
+                            </div><!-- /.client-img -->
+
+                            <div class="testimonial-txt text-center">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
+                                    eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
+                                </p>
+                            </div><!-- /.testimonial-txt -->
+
+                            <div class="testimonial-footer">
+                                <h6 class="inline clinet-name">Maria Doe</h6>
+                                <span class="client-company">Envato</span>
+
+                                <div class="client-rating pull-right">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                            </div><!-- /.testimonial-footer -->
+                        </div><!-- /.testimonial-item -->
+                    </div><!-- /.item col-sm-12 -->
 
 
-@*<section id="pricing" class="pricing-section">
-        <div class="container">
-            <div class="section-padding">
+                    <div class="item col-sm-12">
+                        <div class="testimonial-item">
+                            <div class="client-img">
+                                <img src="images/testimonials/3.jpg" alt="Client Image">
+                            </div><!-- /.client-img -->
 
-                <div class="pricing-container">
-                    <div class="row">
-                        <div class="owl-container">
-                            <div id="priceSlider" class="recent-post-slider owl-carousel owl-theme" data-pagination="false" data-screenitems="[[0, 1], [600, 2], [1000, 3], [1200, 4]]" data-items="4" data-autoplay="3000">
+                            <div class="testimonial-txt text-center">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
+                                    eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
+                                </p>
+                            </div><!-- /.testimonial-txt -->
 
-                                <div class="item col-sm-12">
-                                    <div class="price-item text-center">
+                            <div class="testimonial-footer">
+                                <h6 class="inline clinet-name">William Doe</h6>
+                                <span class="client-company">Envato</span>
 
-                                        <div class="stripe-full stripe-1 text-center">
-                                            <h5 class="stripe-over">
-                                                Standard Plan
-                                            </h5>
-                                        </div>
-
-                                        <div class="price-box">
-                                            <div class="inner">
-                                                <span class="currency">$</span><span class="price-number">99</span>
-                                                <span class="duration">Monthly</span>
-                                            </div><!-- /.inner -->
-                                        </div><!-- /.price-box -->
-
-                                        <ul class="item-description">
-                                            <li>5 Projects</li>
-                                            <li>5 GB Storage</li>
-                                            <li>Unlimited Users</li>
-                                            <li>10 GB Bandwidth</li>
-                                            <li>Enhanced Security</li>
-                                        </ul>
-
-                                        <div class="sign-up-link">
-                                            <a href="#" class="sign-up btn md-btn full-btn m0">Sign Up Now</a>
-                                        </div><!-- /.link -->
-                                    </div><!-- /.price-item -->
-                                </div><!-- /.item col-sm-12 -->
+                                <div class="client-rating pull-right">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div><!-- /.testimonial-footer -->
+                        </div><!-- /.testimonial-item -->
+                    </div><!-- /.item col-sm-12 -->
 
 
-                                <div class="item col-sm-12">
-                                    <div class="price-item text-center">
+                    <div class="item col-sm-12">
+                        <div class="testimonial-item">
+                            <div class="client-img">
+                                <img src="images/testimonials/2.jpg" alt="Client Image">
+                            </div><!-- /.client-img -->
 
-                                        <div class="stripe-full stripe-1 text-center">
-                                            <h5 class="stripe-over">
-                                                Premium Plan
-                                            </h5>
-                                        </div>
+                            <div class="testimonial-txt text-center">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
+                                    eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
+                                </p>
+                            </div><!-- /.testimonial-txt -->
 
-                                        <div class="price-box">
-                                            <div class="inner">
-                                                <span class="currency">$</span><span class="price-number">199</span>
-                                                <span class="duration">Monthly</span>
-                                            </div><!-- /.inner -->
-                                        </div><!-- /.price-box -->
+                            <div class="testimonial-footer">
+                                <h6 class="inline clinet-name">Jimmy Doe</h6>
+                                <span class="client-company">Envato</span>
 
-                                        <ul class="item-description">
-                                            <li>5 Projects</li>
-                                            <li>5 GB Storage</li>
-                                            <li>Unlimited Users</li>
-                                            <li>10 GB Bandwidth</li>
-                                            <li>Enhanced Security</li>
-                                        </ul>
-
-                                        <div class="sign-up-link">
-                                            <a href="#" class="sign-up btn md-btn full-btn m0">Sign Up Now</a>
-                                        </div><!-- /.link -->
-                                    </div><!-- /.price-item -->
-                                </div><!-- /.item col-sm-12 -->
-
-
-                                <div class="item col-sm-12">
-                                    <div class="price-item text-center">
-
-                                        <div class="stripe-full stripe-1 text-center">
-                                            <span class="featured left"><i class="fa fa-star"></i></span>
-                                            <h5 class="stripe-over">
-                                                Advanced Plan
-                                            </h5>
-                                            <span class="featured right"><i class="fa fa-star"></i></span>
-                                        </div>
-
-                                        <div class="price-box">
-                                            <div class="inner">
-                                                <span class="currency">$</span><span class="price-number">299</span>
-                                                <span class="duration">Monthly</span>
-                                            </div><!-- /.inner -->
-                                        </div><!-- /.price-box -->
-
-                                        <ul class="item-description">
-                                            <li>5 Projects</li>
-                                            <li>5 GB Storage</li>
-                                            <li>Unlimited Users</li>
-                                            <li>10 GB Bandwidth</li>
-                                            <li>Enhanced Security</li>
-                                        </ul>
-
-                                        <div class="sign-up-link">
-                                            <a href="#" class="sign-up btn md-btn full-btn m0">Sign Up Now</a>
-                                        </div><!-- /.link -->
-                                    </div><!-- /.price-item -->
-                                </div><!-- /.item col-sm-12 -->
-
-
-                                <div class="item col-sm-12">
-                                    <div class="price-item text-center">
-
-                                        <div class="stripe-full stripe-1 text-center">
-                                            <h5 class="stripe-over">
-                                                Ultimate Plan
-                                            </h5>
-                                        </div>
-
-                                        <div class="price-box">
-                                            <div class="inner">
-                                                <span class="currency">$</span><span class="price-number">399</span>
-                                                <span class="duration">Monthly</span>
-                                            </div><!-- /.inner -->
-                                        </div><!-- /.price-box -->
-
-                                        <ul class="item-description">
-                                            <li>5 Projects</li>
-                                            <li>5 GB Storage</li>
-                                            <li>Unlimited Users</li>
-                                            <li>10 GB Bandwidth</li>
-                                            <li>Enhanced Security</li>
-                                        </ul>
-
-                                        <div class="sign-up-link">
-                                            <a href="#" class="sign-up btn md-btn full-btn m0">Sign Up Now</a>
-                                        </div><!-- /.link -->
-                                    </div><!-- /.price-item -->
-                                </div><!-- /.item col-sm-12 -->
-
-                                <div class="item col-sm-12">
-                                    <div class="price-item text-center">
-
-                                        <div class="stripe-full stripe-1 text-center">
-                                            <h5 class="stripe-over">
-                                                Ultimate Plan
-                                            </h5>
-                                        </div>
-
-                                        <div class="price-box">
-                                            <div class="inner">
-                                                <span class="currency">$</span><span class="price-number">399</span>
-                                                <span class="duration">Monthly</span>
-                                            </div><!-- /.inner -->
-                                        </div><!-- /.price-box -->
-
-                                        <ul class="item-description">
-                                            <li>5 Projects</li>
-                                            <li>5 GB Storage</li>
-                                            <li>Unlimited Users</li>
-                                            <li>10 GB Bandwidth</li>
-                                            <li>Enhanced Security</li>
-                                        </ul>
-
-                                        <div class="sign-up-link">
-                                            <a href="#" class="sign-up btn md-btn full-btn m0">Sign Up Now</a>
-                                        </div><!-- /.link -->
-                                    </div><!-- /.price-item -->
-                                </div><!-- /.item col-sm-12 -->
-
-                            </div><!-- /#priceSlider -->
-                        </div>
-                    </div><!-- /.row -->
-                </div><!-- /.pricing-container -->
-            </div><!-- /.section-padding -->
-        </div><!-- /.container -->
-    </section><!-- /#pricing -->
-    <!-- Pricing Section End -->
-
-
-    <hr>
-
-    <!-- Testimonial Section -->
-    <section id="testimonial" class="pricing-section">
-        <div class="container">
-            <div class="section-padding">
-                <div class="title-container text-center">
-                    <h2 class="striped-title">
-                        Positive <span> Testimonials </span>
-                        <span class="stripe-t-left"></span>
-                        <span class="stripe-t-back"></span>
-                        <span class="stripe-t-right"></span>
-                    </h2>
-                    <p class="section-description">
-                        We’ve worked for a lot of people and of course we’ve made them so happy! you can read some handpicked words about us here
-                    </p>
-                </div><!-- /.title-container -->
-
-                <div class="owl-container">
-                    <div class="carousel-navigator text-center">
-                        <button class="btn nav-btn sm-btn rbtn prev tprev"><i class="fa fa-long-arrow-left"></i></button>
-                        <button class="btn nav-btn sm-btn rbtn next tnext"><i class="fa fa-long-arrow-right"></i></button>
-                    </div>
-
-                    <div id="testimonialSlider" class="testimonial-slider owl-carousel p0 owl-theme" data-pagination="false" data-screenitems="[[0, 1], [600, 2], [1000, 3]]" data-items="4">
-
-                        <div class="item col-sm-12">
-                            <div class="testimonial-item">
-                                <div class="client-img">
-                                    <img src="images/testimonials/1.jpg" alt="Client Image">
-                                </div><!-- /.client-img -->
-
-                                <div class="testimonial-txt text-center">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
-                                        eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
-                                    </p>
-                                </div><!-- /.testimonial-txt -->
-
-                                <div class="testimonial-footer">
-                                    <h6 class="inline clinet-name">Jimmy Doe</h6>
-                                    <span class="client-company">Envato</span>
-
-                                    <div class="client-rating pull-right">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-empty"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                </div><!-- /.testimonial-footer -->
-                            </div><!-- /.testimonial-item -->
-                        </div><!-- /.item col-sm-12 -->
-
-
-                        <div class="item col-sm-12">
-                            <div class="testimonial-item">
-                                <div class="client-img">
-                                    <img src="images/testimonials/2.jpg" alt="Client Image">
-                                </div><!-- /.client-img -->
-
-                                <div class="testimonial-txt text-center">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
-                                        eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
-                                    </p>
-                                </div><!-- /.testimonial-txt -->
-
-                                <div class="testimonial-footer">
-                                    <h6 class="inline clinet-name">Maria Doe</h6>
-                                    <span class="client-company">Envato</span>
-
-                                    <div class="client-rating pull-right">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                </div><!-- /.testimonial-footer -->
-                            </div><!-- /.testimonial-item -->
-                        </div><!-- /.item col-sm-12 -->
-
-
-                        <div class="item col-sm-12">
-                            <div class="testimonial-item">
-                                <div class="client-img">
-                                    <img src="images/testimonials/3.jpg" alt="Client Image">
-                                </div><!-- /.client-img -->
-
-                                <div class="testimonial-txt text-center">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
-                                        eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
-                                    </p>
-                                </div><!-- /.testimonial-txt -->
-
-                                <div class="testimonial-footer">
-                                    <h6 class="inline clinet-name">William Doe</h6>
-                                    <span class="client-company">Envato</span>
-
-                                    <div class="client-rating pull-right">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div><!-- /.testimonial-footer -->
-                            </div><!-- /.testimonial-item -->
-                        </div><!-- /.item col-sm-12 -->
-
-
-                        <div class="item col-sm-12">
-                            <div class="testimonial-item">
-                                <div class="client-img">
-                                    <img src="images/testimonials/2.jpg" alt="Client Image">
-                                </div><!-- /.client-img -->
-
-                                <div class="testimonial-txt text-center">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
-                                        eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
-                                    </p>
-                                </div><!-- /.testimonial-txt -->
-
-                                <div class="testimonial-footer">
-                                    <h6 class="inline clinet-name">Jimmy Doe</h6>
-                                    <span class="client-company">Envato</span>
-
-                                    <div class="client-rating pull-right">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-empty"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                </div><!-- /.testimonial-footer -->
-                            </div><!-- /.testimonial-item -->
-                        </div><!-- /.item col-sm-12 -->
-                    </div><!--  /#testimonialSlider -->
-                </div><!-- /.owl-container -->
-            </div><!-- /.section-padding -->
-        </div><!-- /.container -->
-    </section><!-- /#testimonial -->
-    <!-- Testimonial Section End -->*@
+                                <div class="client-rating pull-right">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-empty"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                            </div><!-- /.testimonial-footer -->
+                        </div><!-- /.testimonial-item -->
+                    </div><!-- /.item col-sm-12 -->
+                </div><!--  /#testimonialSlider -->
+            </div><!-- /.owl-container -->
+        </div><!-- /.section-padding -->
+    </div><!-- /.container -->
+</section><!-- /#testimonial -->
+<!-- Testimonial Section End -->
