@@ -22,9 +22,9 @@ namespace web.railgun.com.Models
         public DbSet<AspNetUser> AspNetUsers { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Category> Categories { get; set; }
-
         public DbSet<PricingTier> PricingTiers { get; set; }
         public DbSet<Feature> Features { get; set; }
+        public DbSet<Value> Values { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AspNetRoleMap());
@@ -35,7 +35,7 @@ namespace web.railgun.com.Models
 
 
             modelBuilder.Entity<Feature>()
-    .HasOptional(x => x.Category)    
+    .HasOptional(x => x.Category)
     .WithMany()
     .HasForeignKey(x => x.CategoryId);
 

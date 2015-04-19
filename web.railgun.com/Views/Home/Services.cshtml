@@ -1,101 +1,168 @@
-﻿
+﻿@model IEnumerable<Value>
 
-@*<div class="section-padding text-center">
-    <h1 class="tm0">Quality <em>ideas</em> + <em>talented programmers</em> + standarised working practices = <span>outstanding</span> systems </h1>
-    <p class="section-description">
-        Build the system your business needs with the features you want, all fully aligned to the latest development standards and technologies. 
-    </p>
-    <div class="btn-container">
-        <a href="#" class="btn md-btn">
-            Contact Us Now <i class="fa fa-envelope"></i>
-        </a>
-
-        <a href="~/images/ProjectImages/GrindBackOfHouse/graphic1.jpg" class="btn md-btn">
-            Purchase it Now  <i class="fa fa-shopping-cart"></i>
-        </a>
-    </div>
-</div>*@
-
-
-<hr>
+@using web.railgun.com.Models
 
 
 
-<!-- Features Section -->
-<section class="features  section-padding">
-    <div class="container">
-        <div class="title-container text-center">
-            <h2 class="striped-title">
-                Core <span> Values </span>
-                <span class="stripe-t-left"></span>
-                <span class="stripe-t-back"></span>
-                <span class="stripe-t-right"></span>
-            </h2>
+    @*<div class="section-padding text-center">
+            <h1 class="tm0">Quality <em>ideas</em> + <em>talented programmers</em> + standarised working practices = <span>outstanding</span> systems </h1>
             <p class="section-description">
-              whether website, desktop or mobile, Railgun's well tested and fully streamlined development process means you get all this included:
-        </div><!-- /.title-container -->
+                Build the system your business needs with the features you want, all fully aligned to the latest development standards and technologies.
+            </p>
+            <div class="btn-container">
+                <a href="#" class="btn md-btn">
+                    Contact Us Now <i class="fa fa-envelope"></i>
+                </a>
 
-        <div class="row">
+                <a href="~/images/ProjectImages/GrindBackOfHouse/graphic1.jpg" class="btn md-btn">
+                    Purchase it Now  <i class="fa fa-shopping-cart"></i>
+                </a>
+            </div>
+        </div>*@
 
-            <div class="col-md-3 col-sm-6 text-center">
-                <div class="item-container v2">
-                    <div class="icon mauto">
-                        <i class="fa fa-desktop"></i>
+
+    <hr>
+
+    <section class="features  section-padding">
+        <div class="container">
+
+            <div class="service-container">
+                <div class="row">
+                    <div class="item col-md-12">
+                        <div class="title-container text-center">
+                            <h2 class="striped-title">
+                                Core <span> Values </span>
+                                <span class="stripe-t-left"></span>
+                                <span class="stripe-t-back"></span>
+                                <span class="stripe-t-right"></span>
+                            </h2>
+                            <p class="section-description">
+                                whether website, desktop or mobile, Railgun's well tested and fully streamlined development process means you get all this included:
+                        </div><!-- /.title-container -->
+                    </div><!-- /.col-md-4 -->
+
+                    <div class="owl-container wow bounceInUp" data-wow-delay=".3s">
+                        <div class="carousel-navigator text-center">
+                            <button class="btn nav-btn sm-btn rbtn prev tprev"><i class="fa fa-long-arrow-left"></i></button>
+                            <button class="btn nav-btn sm-btn rbtn next tnext"><i class="fa fa-long-arrow-right"></i></button>
+                        </div>
+
+                        <div id="serviceSlider" class="testimonial-slider owl-carousel owl-theme" data-pagination="true" data-screenitems="[[0, 1],[450, 1], [700, 2], [1000, 3], [1200, 3]]" data-items="3" data-autoplay="true">
+
+
+                        @{
+                            foreach (var service in Model)
+                            {
+
+                                <div class="item col-md-12">
+                                    <div class="item-container service v2">
+                                        <div class="icon text-center">
+                                            <i class="@service.IconClass"></i>
+                                        </div>
+                                        <div class="service-text">
+                                            <h4 class="feature-title"><a href="#">@service.Title</a></h4>
+                                            <div class="sub-title">
+                                               @service.SubTitle
+                                            </div>
+                                            <p class="texts">
+                                               @service.ValueDescription
+                                            </p>
+                                            <a class="btn read-more no-border lp0 lm0">
+                                                Read more <i class="fa fa-hand-o-right"></i>
+                                            </a>
+                                        </div><!-- /.service-text -->
+                                    </div><!-- /.item-container -->
+                                </div><!-- /.col-md-4 -->
+
+
+                            }
+
+                        }
+                           
+
+
+                        </div><!-- /.serviceSlider -->
                     </div>
-                    <h5 class="feature-title">Fully Responsive Layout</h5>
-                    <p class="stripe-bfixw sub-title">Desktops, Tables & Phones</p>
-                    <p>
-                        Templated designs mean your applications look good across devices. Preview layouts before we start building, with options to suit all businesses.
-                    </p>
-                </div><!-- /.item-container -->
-            </div><!-- /.col-md-3 -->
+                </div><!-- /.row -->
+            </div><!-- /.service-container -->
+
+        </div>
+    </section>
+
+    <hr />
 
 
-            <div class="col-md-3 col-sm-6 text-center">
-                <div class="item-container v2">
-                    <div class="icon mauto">
-                        <i class="fa fa-bolt"></i>
-                    </div>
-                    <h5 class="feature-title">Own your code</h5>
-                    <p class="stripe-bfixw sub-title">Once Built, It's Yours</p>
-                    <p>
-                        The codebase is yours do with as you choose - at no extra cost. Extend it, read it, put it online or give it to your 13 year old nephew to play with. 
-                    </p>
-                </div><!-- /.item-container -->
-            </div><!-- /.col-md-3 -->
+    @*<!-- Features Section -->
+    <section class="features  section-padding">
+        <div class="container">
+            <div class="title-container text-center">
+                <h2 class="striped-title">
+                    Core <span> Values </span>
+                    <span class="stripe-t-left"></span>
+                    <span class="stripe-t-back"></span>
+                    <span class="stripe-t-right"></span>
+                </h2>
+                <p class="section-description">
+                    whether website, desktop or mobile, Railgun's well tested and fully streamlined development process means you get all this included:
+            </div><!-- /.title-container -->
 
-            <div class="col-md-3 col-sm-6 text-center">
-                <div class="item-container v2">
-                    <div class="icon mauto">
-                        <i class="fa fa-wrench"></i>
-                    </div>
-                    <h5 class="feature-title">Customer Testing & Feedback</h5>
-                    <p class="stripe-bfixw sub-title">Built Into The Railgun Process</p>
-                    <p>
-                        Because we build systems by feature, you can test and review your system AS we're completing it! Adjustments? No problem, just let us know! 
-                    </p>
-                </div><!-- /.item-container -->
-            </div><!-- /.col-md-3 -->
+            <div class="row">
 
-
-            <div class="col-md-3 col-sm-6 text-center">
-                <div class="item-container v2">
-                    <div class="icon mauto">
-                        <i class="fa fa-support"></i>
-                    </div>
-                    <h5 class="feature-title">Standardised Design</h5>
-                    <p class="stripe-bfixw sub-title">Future Proof Systems</p>
-                    <p>
-                        Railgun's design pattern approach ensures your system will be operating at peak for years to come. New features can be added at any time. 
-                    </p>
-                </div><!-- /.item-container -->
-            </div><!-- /.col-md-3 -->
-
-        </div><!-- /.row -->
-    </div><!-- /.container -->
-</section><!-- /.features -->
-<!-- Features Section End -->
+                <div class="col-md-3 col-sm-6 text-center">
+                    <div class="item-container v2">
+                        <div class="icon mauto">
+                            <i class="fa fa-desktop"></i>
+                        </div>
+                        <h5 class="feature-title">Fully Responsive Layout</h5>
+                        <p class="stripe-bfixw sub-title">Desktops, Tables & Phones</p>
+                        <p>
+                            Templated designs mean your applications look good across devices. Preview layouts before we start building, with options to suit all businesses.
+                        </p>
+                    </div><!-- /.item-container -->
+                </div><!-- /.col-md-3 -->
 
 
+                <div class="col-md-3 col-sm-6 text-center">
+                    <div class="item-container v2">
+                        <div class="icon mauto">
+                            <i class="fa fa-bolt"></i>
+                        </div>
+                        <h5 class="feature-title">Own your code</h5>
+                        <p class="stripe-bfixw sub-title">Once Built, It's Yours</p>
+                        <p>
+                            The codebase is yours do with as you choose - at no extra cost. Extend it, read it, put it online or give it to your 13 year old nephew to play with.
+                        </p>
+                    </div><!-- /.item-container -->
+                </div><!-- /.col-md-3 -->
+
+                <div class="col-md-3 col-sm-6 text-center">
+                    <div class="item-container v2">
+                        <div class="icon mauto">
+                            <i class="fa fa-wrench"></i>
+                        </div>
+                        <h5 class="feature-title">Customer Testing & Feedback</h5>
+                        <p class="stripe-bfixw sub-title">Built Into The Railgun Process</p>
+                        <p>
+                            Because we build systems by feature, you can test and review your system AS we're completing it! Adjustments? No problem, just let us know!
+                        </p>
+                    </div><!-- /.item-container -->
+                </div><!-- /.col-md-3 -->
 
 
+                <div class="col-md-3 col-sm-6 text-center">
+                    <div class="item-container v2">
+                        <div class="icon mauto">
+                            <i class="fa fa-support"></i>
+                        </div>
+                        <h5 class="feature-title">Standardised Design</h5>
+                        <p class="stripe-bfixw sub-title">Future Proof Systems</p>
+                        <p>
+                            Railgun's design pattern approach ensures your system will be operating at peak for years to come. New features can be added at any time.
+                        </p>
+                    </div><!-- /.item-container -->
+                </div><!-- /.col-md-3 -->
+
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.features -->
+    <!-- Features Section End -->*@
