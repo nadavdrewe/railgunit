@@ -15,7 +15,7 @@
 <section id="more-service" class="bm50">
     <div class="container">
         <div class="section-padding text-center">
-            <h1 class="tm0">Quality <em>ideas</em> + <em>talented programmers</em> + standarised working practices = <span>outstanding</span> systems </h1>
+            <h1 class="tm0"> @*<em>*@Quality ideas@*</em>*@  + standarised working practices = <span>outstanding</span> systems </h1>
             <p class="section-description">
                 Build the system your business needs with the features you want, all fully aligned to the latest development standards and technologies.
             </p>
@@ -83,8 +83,8 @@ count1++;
                     {
                         var id = "tab" + cat.CategoryId;
                         <div class="tab-pane fade @if(count2 == 0){@att2}" id="@id">
-                            <img class="tab-image pull-right" src="images/tab/tab-img.jpg" alt="tab-image">
-                            <h4 class="tm0"><span>@cat.Name</h4>
+                            <img class="tab-image pull-right" src="@cat.LogoURL" alt="tab-image">
+                            <h4 class="tm0">@cat.Name</h4>
                             <p>
                                 @Html.Raw(cat.BuildSynopsis)
                             </p>                           

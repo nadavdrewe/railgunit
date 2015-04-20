@@ -13,7 +13,7 @@ namespace web.railgun.com.Models
         public string Name { get; set; }
         public string Abbreviation { get; set; }
         public string BuildSynopsis { get; set; }
-
+        public string LogoURL { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
 
         public virtual ICollection<Feature> Features { get; set; }

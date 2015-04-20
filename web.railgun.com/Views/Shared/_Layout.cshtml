@@ -91,7 +91,7 @@
                             <li class="current has-sub-menu">
                                 <a href="@Url.Action("Index","Home", null, Request.Url.Scheme)"><div>Railgun</div></a>
                                 <ul class="sub-menu">
-                                    <li><a href="@Url.Action("WhatWeDo", "Home", null, Request.Url.Scheme)">What We Do</a></li>
+                                    <li><a href="~/Home/Index#railgunInnovative">What We Do</a></li>
                                     <li><a href="@Url.Action("LetTalkBusiness", "Home", null, Request.Url.Scheme)">Let's Talk Business</a></li>
                                     <li><a href="@Url.Action("LetTalkTech", "Home", null, Request.Url.Scheme)">Let's Talk Tech</a></li>
                                     <li><a href="@Url.Action("", "Home", null, Request.Url.Scheme)">Jobs</a></li>
@@ -147,10 +147,13 @@
                                         </ul>
                                     </li>
 
+                                    <li><a href="@Url.Action("ProjectsInProgress", "Home", null, Request.Url.Scheme)"><i class="fa fa-history"></i>In progress</a></li>
+                            
+
                                 </ul><!-- /.sub-menu -->
                             </li><!-- /.has-sub-menu -->
 
-                            <li class="has-sub-menu">
+                            @*<li class="has-sub-menu">
                                 <a href="#">
                                     <div>RailTech</div>
                                 </a>
@@ -206,7 +209,7 @@
                                     </li>
 
                                 </ul><!-- /.sub-menu -->
-                            </li><!-- /.has-sub-menu -->
+                            </li><!-- /.has-sub-menu -->*@
 
 
 
@@ -672,9 +675,8 @@
                 <div class="container">
                     <div class="footer-menu pull-right">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Pages</a></li>
-                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="~/Home">Home</a></li>                     
+                            <li><a href="~/Home/Projects">Portfolio</a></li>
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">Features</a></li>
                             <li><a href="#">Shop</a></li>
@@ -683,7 +685,7 @@
                     </div><!-- /.footer-menu -->
 
                     <div class="copyrights lrp15">
-                        Copyright &copy; @DateTime.Now.Year <a href="#">Railgun.it</a> -  Developed by <a href="http://www.railgunit.com">using Railgun</a>
+                        Copyright &copy; @DateTime.Now.Year <a href="#">Railgun.it</a> -  Developed <a href="http://www.railgunit.com">using Railgun</a>
                     </div><!-- /.copyrights -->
                 </div><!-- /.container -->
             </div><!-- /.footer-container -->

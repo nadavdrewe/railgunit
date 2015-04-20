@@ -27,6 +27,7 @@ namespace web.railgun.com.Controllers
             ViewBag.Pricings = db.PricingTiers.ToList();
             ViewBag.Features = db.Features.ToList();
             ViewBag.Services = db.Values.ToList();
+            ViewBag.Testimonials = db.Testimonials.ToList();
 
             return View(model);
         }
@@ -70,7 +71,7 @@ namespace web.railgun.com.Controllers
 
         public ActionResult ProjectsInProgress()
         {
-            var projects = db.Projects.Where(x => x.InProgress == false).ToList();
+            var projects = db.Projects.Where(x => x.InProgress == true).ToList();
             ViewBag.Categories = db.Categories.ToList();
 
             return View("Projects", projects);
@@ -100,6 +101,11 @@ namespace web.railgun.com.Controllers
             return View();
         }
 
+        public ActionResult Team()
+        {
+            var team = db.TeamMembers.ToList();
+            return View(team);
+        }
 
 
 

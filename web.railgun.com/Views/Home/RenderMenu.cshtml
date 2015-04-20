@@ -7,7 +7,8 @@
         var id = project.ProjectId;
         string title = project.Name;
 
-        <a href="~/Home/ProjectsInProgress">@title</a>
+        <a href="~/Home/Project?ProjectId=@project.ProjectId">@title</a>
             @*<li>@Html.ActionLink(title, "Project", "Home", new { id = id }, null)</li>*@
     }
+
 }

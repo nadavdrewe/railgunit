@@ -1,0 +1,111 @@
+﻿@model IEnumerable<TeamMember>
+@using web.railgun.com.Models
+
+@{
+    ViewBag.Title = "Team";
+}
+
+<!-- Page Header Section  -->
+<section id="site-page-header" class="site-page-header blog-header polygon-bg">
+    <div class="overlay-effects box-pattern index-1"></div>
+    <div class="container">
+        <div class="page-header-content display-table-middle">
+            <div class="inside-content vertical-middle">
+                <h1 class="page-title text-center highlighted">About Us</h1>
+                <h3 class="page-description text-center">Let us tell you about Railgun.it</h3>
+            </div>
+        </div><!--  /.page-header-content -->
+        <div class="site-breadcrumb pull-right">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active">About Us</li>
+            </ol>
+        </div>
+    </div><!--  /.container -->
+</section><!-- /#page-header  -->
+<!-- Page Header Section End -->
+
+
+
+<section id="team">
+    <div class="section-padding">
+        <div class="container">
+            <div class="title-container text-center">
+                <h2 class="striped-title">
+                    <span>Team</span> Members
+                    <span class="stripe-t-left"></span>
+                    <span class="stripe-t-back"></span>
+                    <span class="stripe-t-right"></span>
+                </h2>
+                <p class="section-description">
+                    Highly qualified people with years of experience in system architecture, design and construction.
+                </p>
+            </div><!-- /.title-container -->
+            <div class="row">
+                <div class="tm30">
+
+                    @{
+
+                        foreach (var member in Model)
+                        {
+                            <div class="col-md-3 col-sm-6">
+                                <div class="team-member text-center">
+                                    <div class="member-img-box">
+                                        <img src="@member.PictureURL" alt="@member.Name Image">
+
+                                        <div class="social-icons">
+                                            <a href="#" class="facebook-btn"><i class="fa fa-facebook"></i></a>
+                                            <a href="#" class="twitter-btn"><i class="fa fa-twitter"></i></a>
+                                            <a href="#" class="google-plus-btn"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#" class="dribbble-btn"><i class="fa fa-dribbble"></i></a>
+                                            <a href="#" class="linkedin-btn"><i class="fa fa-linkedin"></i></a>
+                                            <a href="#" class="stumbleupon-btn"><i class="fa fa-stumbleupon"></i></a>
+                                        </div><!-- /.social-icons -->
+
+                                    </div><!-- /.member-img-box -->
+                                    <div class="name-container">
+                                        <h6 class="member-name text-cap">@member.Name</h6>
+                                    </div>
+                                    <div class="stripe-full stripe-1">
+                                        <h6 class="member-designation stripe-over">@member.JobRole</h6>
+                                    </div>
+                                    <p class="member-description">
+                                       @member.JobRole
+                                    </p>
+                                    <p class="member-contact">
+                                        <span class="mail-icon">
+                                            <i class="fa fa-envelope-o"></i>
+                                        </span>
+                                        Mail Add:
+                                        <span class="member-email">
+                                            @member.EmailAddress
+                                        </span>
+                                        <br>
+                                        <span class="phone-icon">
+                                            <i class="fa fa-phone"></i>
+                                        </span>
+                                        Phone No:
+                                        <span class="member-phone">
+                                            +1911 (77) 22-1111
+                                        </span>
+                                    </p> <!-- /.member-contact -->
+
+                                </div><!-- /.team-member -->
+                            </div><!-- /.item -->
+                        }
+                    }
+
+
+
+                </div><!-- /.owl-slider -->
+
+            </div><!-- /.row -->
+        </div><!-- /.section-padding -->
+    </div><!-- /.container -->
+</section><!-- /#team -->
+
+
+<hr>
+
+

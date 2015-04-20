@@ -5,6 +5,8 @@
 
     var pricings = (IEnumerable<PricingTier>)ViewData["pricings"];
     var features = (IEnumerable<Feature>)ViewData["features"];
+    var testmonials = (IEnumerable<Testimonial>)ViewData["testimonials"];
+
 
     var tabCount = 0;
     var tab2Count = 0;
@@ -18,7 +20,7 @@
         <div class="section-padding">
             <div class="title-container text-center">
                 <h2 class="striped-title">
-                    Real Cheap <span>Prices</span>
+                    £££ ?? <span>Prices</span>
                     <span class="stripe-t-left"></span>
                     <span class="stripe-t-back"></span>
                     <span class="stripe-t-right"></span>
@@ -36,7 +38,7 @@
                             var catId = cat.CategoryId;
                             var href = "#ctab" + @catId;
 
-                            <li @if (tabCount.Equals(0)) { @Html.Raw("class='active'")                             }>
+                            <li @if (tabCount.Equals(0)) { @Html.Raw("class='active'")                                 }>
 
                                 <span class="stripe-left"></span>
                                 <a href="@href" role="tab" data-toggle="tab" aria-expanded="true">@cat.Name</a>
@@ -139,8 +141,9 @@ tabCount++;
 
                                                             <div class="price-box">
                                                                 <div class="inner">
+                                                                    <span class="duration">From</span>
                                                                     <span class="currency">£</span><span class="price-number">@price.FromPrice</span>
-                                                                    <span class="duration">As agreed</span>
+
                                                                 </div><!-- /.inner -->
                                                             </div><!-- /.price-box -->
 
@@ -197,7 +200,7 @@ tabCount++;
                     <span class="stripe-t-right"></span>
                 </h2>
                 <p class="section-description">
-                    We’ve worked for a lot of people and of course we’ve made them so happy! you can read some handpicked words about us here
+                    Don't take our word for it - we’ve worked for a lot of people we'd like to thing they're pretty pleased with us!
                 </p>
             </div><!-- /.title-container -->
 
@@ -207,122 +210,49 @@ tabCount++;
                     <button class="btn nav-btn sm-btn rbtn next tnext"><i class="fa fa-long-arrow-right"></i></button>
                 </div>
 
-                <div id="testimonialSlider" class="testimonial-slider owl-carousel p0 owl-theme" data-pagination="false" data-screenitems="[[0, 1], [600, 2], [1000, 3]]" data-items="4">
+                <div  id="testimonialSlider" class="testimonial-slider owl-carousel p0 owl-theme" data-pagination="false" data-screenitems="[[0, 1], [600, 2], [1000, 3]]" data-items="4">
 
-                    <div class="item col-sm-12">
-                        <div class="testimonial-item">
-                            <div class="client-img">
-                                <img src="images/testimonials/1.jpg" alt="Client Image">
-                            </div><!-- /.client-img -->
+                    @foreach (var testi in testmonials)
+                    {
+                        <div class="item col-sm-12">
+                            <div class="testimonial-item">
+                                <div class="client-img">
+                                    <img style="background-color:white" src="@testi.ImageURL" alt="Client Image">
+                                </div><!-- /.client-img -->
 
-                            <div class="testimonial-txt text-center">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
-                                    eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
-                                </p>
-                            </div><!-- /.testimonial-txt -->
+                                <div class="testimonial-txt text-center">
+                                    <p>
+                                        @testi.Text
+                                    </p>
+                                </div><!-- /.testimonial-txt -->
 
-                            <div class="testimonial-footer">
-                                <h6 class="inline clinet-name">Jimmy Doe</h6>
-                                <span class="client-company">Envato</span>
+                                <div class="testimonial-footer">
+                                    <h6 class="inline clinet-name">@testi.Name</h6>
+                                    <span class="client-company">
+                                        @testi.JobTitle
+                                    </span>
 
-                                <div class="client-rating pull-right">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-empty"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                            </div><!-- /.testimonial-footer -->
-                        </div><!-- /.testimonial-item -->
-                    </div><!-- /.item col-sm-12 -->
+                                    <div class="client-rating pull-right">
+                                        @{
+                        var stars = testi.StarRating;
 
+                        for (int i = 0; i < testi.StarRating; i++)
+                        {
+                            <i class="fa fa-star"></i>
 
-                    <div class="item col-sm-12">
-                        <div class="testimonial-item">
-                            <div class="client-img">
-                                <img src="images/testimonials/2.jpg" alt="Client Image">
-                            </div><!-- /.client-img -->
+                        }
 
-                            <div class="testimonial-txt text-center">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
-                                    eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
-                                </p>
-                            </div><!-- /.testimonial-txt -->
-
-                            <div class="testimonial-footer">
-                                <h6 class="inline clinet-name">Maria Doe</h6>
-                                <span class="client-company">Envato</span>
-
-                                <div class="client-rating pull-right">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                            </div><!-- /.testimonial-footer -->
-                        </div><!-- /.testimonial-item -->
-                    </div><!-- /.item col-sm-12 -->
+                                        }
 
 
-                    <div class="item col-sm-12">
-                        <div class="testimonial-item">
-                            <div class="client-img">
-                                <img src="images/testimonials/3.jpg" alt="Client Image">
-                            </div><!-- /.client-img -->
 
-                            <div class="testimonial-txt text-center">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
-                                    eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
-                                </p>
-                            </div><!-- /.testimonial-txt -->
+                                    </div>
+                                </div><!-- /.testimonial-footer -->
+                            </div><!-- /.testimonial-item -->
+                        </div><!-- /.item col-sm-12 -->
 
-                            <div class="testimonial-footer">
-                                <h6 class="inline clinet-name">William Doe</h6>
-                                <span class="client-company">Envato</span>
+                    }
 
-                                <div class="client-rating pull-right">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div><!-- /.testimonial-footer -->
-                        </div><!-- /.testimonial-item -->
-                    </div><!-- /.item col-sm-12 -->
-
-
-                    <div class="item col-sm-12">
-                        <div class="testimonial-item">
-                            <div class="client-img">
-                                <img src="images/testimonials/2.jpg" alt="Client Image">
-                            </div><!-- /.client-img -->
-
-                            <div class="testimonial-txt text-center">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis est
-                                    eu lectus eleifend aliquet Nulla aliquam arcu tortor pellentesque isque nulla non viverra.
-                                </p>
-                            </div><!-- /.testimonial-txt -->
-
-                            <div class="testimonial-footer">
-                                <h6 class="inline clinet-name">Jimmy Doe</h6>
-                                <span class="client-company">Envato</span>
-
-                                <div class="client-rating pull-right">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-empty"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                            </div><!-- /.testimonial-footer -->
-                        </div><!-- /.testimonial-item -->
-                    </div><!-- /.item col-sm-12 -->
                 </div><!--  /#testimonialSlider -->
             </div><!-- /.owl-container -->
         </div><!-- /.section-padding -->

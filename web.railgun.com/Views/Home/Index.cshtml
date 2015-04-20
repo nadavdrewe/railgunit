@@ -442,7 +442,7 @@
 </section>
 <!-- Slider Section End -->
 <!-- Action Section -->
-<section id="top-action-section" class="callout-action top-part">
+<section id="railgunInnovative" class="callout-action top-part">
     <div class="callout-action-area polygon-bg relative">
         <div class="overlay-effects box-pattern"></div>
         <div class="container">
@@ -451,7 +451,7 @@
                     <div class="row">
                         <h1>Off-the-rack IT? One size fits all? <span>Oh dear.</span></h1>
                         <p class="action-description">
-                            the modern business tech-environment is a jungle - Don't get caught without your <span style="color:#00a1cb">Railgun!</span>
+                            <span style="color:#00a1cb">Railgun.it</span>/systems for innovative business
                         </p>
 
                     </div><!-- /.row -->
@@ -499,7 +499,7 @@
     Html.RenderPartial("~/Views/Home/Services.cshtml", (IEnumerable<Value>)ViewBag.Services);
 
         <hr />
-        Html.RenderPartial("~/Views/Home/Pricing.cshtml", Model.Where(x => x.CategoryId != 2).Where(x => x.CategoryId != 6), new ViewDataDictionary { { "pricings", ViewBag.Pricings }, {"features", ViewBag.Features} });
+    Html.RenderPartial("~/Views/Home/Pricing.cshtml", Model.Where(x => x.CategoryId != 2).Where(x => x.CategoryId != 6), new ViewDataDictionary { { "pricings", ViewBag.Pricings }, { "features", ViewBag.Features }, { "testimonials", ViewBag.Testimonials } });
 
         }
 
