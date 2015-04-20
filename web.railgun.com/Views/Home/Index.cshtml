@@ -458,7 +458,7 @@
                 </div><!-- /.col-md-8 -->
 
                 <div class="col-md-4 text-right">
-                    <a href="#" class="btn md-btn purchase">
+                    <a href="#pricing" class="btn md-btn purchase">
                         View Pricing <i class="fa fa-shopping-cart"></i>
                     </a>
                 </div><!-- /.col-md-4 -->
@@ -486,7 +486,7 @@
                     </div><!-- /.col-md-8 -->
 
                     <div class="col-md-4 text-right">
-                        <a href="#" class="btn md-btn purchase">
+                        <a href="#pricing" class="btn md-btn purchase">
                             View Pricing <i class="fa fa-shopping-cart"></i>
                         </a>
                     </div><!-- /.col-md-4 -->
@@ -498,35 +498,36 @@
 
     Html.RenderPartial("~/Views/Home/Services.cshtml", (IEnumerable<Value>)ViewBag.Services);
 
-        <hr />
+
     Html.RenderPartial("~/Views/Home/Pricing.cshtml", Model.Where(x => x.CategoryId != 2).Where(x => x.CategoryId != 6), new ViewDataDictionary { { "pricings", ViewBag.Pricings }, { "features", ViewBag.Features }, { "testimonials", ViewBag.Testimonials } });
 
-        }
+}
 
 
 
-        <section class="callout-action section-padding">
-            <div class="container">
-                <div class="dark-bg">
-                    <div class="callout-content p30 lrp15 clearfix wow bounceInUp" data-wow-delay=".1s">
-                        <div class="col-md-9">
-                            <h1 style="color:white">"Railgun got my online card sales project up and running from nothing in 13 days" - Tom Boating </h1>
-                        </div><!-- /.col-md-9 -->
-                        <div class="col-md-3 text-right">
-                            <a href="#" class="btn md-btn purchase m0">
-                                Tell us about your business now<i class="fa fa-shopping-cart"></i>
-                            </a>
-                        </div><!-- /.col-md-4 -->
-                    </div><!-- /.callout-action -->
-                </div><!-- /.dark-bg -->
-            </div><!-- /.container -->
-        </section>
+<div class="dark-bg">
+    <div class="callout-content p30 lrp15 clearfix wow bounceInUp" data-wow-delay=".1s">
+        <div class="col-md-9">
+            <h1 style="color:white">"Railgun got my online card sales project up and running from nothing in 13 days" - Tom Boating </h1>
+        </div><!-- /.col-md-9 -->
+        <div class="col-md-3 text-right">
+            <a href="mailto:info:railgunit.com" class="btn md-btn purchase m0">
+                Talk to us now<i class="fa fa-shopping-cart"></i>
+            </a>
+            <br />
+            <br />
+            <a href="#railgunInnovative" class="btn md-btn purchase m0">
+                View our products <i class="fa fa-hand-o-right"></i>
+            </a>
+        </div><!-- /.col-md-4 -->
+    </div><!-- /.callout-action -->
+</div><!-- /.dark-bg -->
 
 
-        <hr>
+<hr>
 
-        <div class="text-center tm30 bm30">
-            <button type="button" class="btn md-btn">Learn about how we work <i class="fa fa-refresh"></i></button>
-            <button type="button" class="btn md-btn">View our prices <i class="fa fa-pencil"></i></button>
-        </div>
+<div class="text-center tm30 bm30">
+    <button type="button" class="btn md-btn">Learn about how we work</a> <i class="fa fa-refresh"></i></button>
+    <button type="button" class="btn md-btn">View our prices <i class="fa fa-pencil"></i></button>
+</div>
 
