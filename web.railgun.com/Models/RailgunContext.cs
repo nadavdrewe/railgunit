@@ -26,6 +26,7 @@ namespace web.railgun.com.Models
         public DbSet<Feature> Features { get; set; }
         public DbSet<Value> Values { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<Lead> Leads { get; set; }
 
         public DbSet<TeamMember> TeamMembers { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

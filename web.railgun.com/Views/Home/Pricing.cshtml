@@ -142,7 +142,8 @@ tabCount++;
                                                             <div class="price-box">
                                                                 <div class="inner">
                                                                     <span class="duration">From</span>
-                                                                    <span class="currency">£</span><span class="price-number">@price.FromPrice</span>
+                                                                    <span class="currency">£</span><span class="price-number">@{ if (price.FromPrice == "0") { @Html.Raw("ASK") } else { @price.FromPrice}
+                                                }</span>
 
                                                                 </div><!-- /.inner -->
                                                             </div><!-- /.price-box -->

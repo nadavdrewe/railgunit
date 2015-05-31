@@ -51,20 +51,16 @@ namespace web.railgun.com.Controllers
             return View(model);
         }
 
-        public ActionResult Projects()
+       
+
+
+        [HttpGet]
+        public ActionResult Projects(int id = 0)
         {
-            var projects = db.Projects.Where(x => x.InProgress != true).ToList().OrderByDescending(x => x.DateInitiated);
+            
+            var projects = id!=0 ? db.Projects.Where(x => x.CategoryId == id).Where(x => x.InProgress != true).ToList().OrderByDescending(x => x.DateInitiated) : db.Projects.Where(x => x.InProgress != true).ToList().OrderByDescending(x => x.DateInitiated);             
             ViewBag.Categories = db.Categories.ToList();
-
-            return View(projects);
-        }
-
-
-        [HttpPost]
-        public ActionResult Projects(int id)
-        {
-            var projects = db.Projects.Where(x => x.InProgress != true).Where(x => x.CategoryId.Equals(id)).ToList().OrderByDescending(x => x.DateInitiated);
-            ViewBag.Categories = db.Categories.ToList();
+            ViewBag.LastId = id;
 
             return View(projects);
         }

@@ -3,6 +3,7 @@
 
 @{
     ViewBag.Title = "Projects";
+    var lastPickedID = ViewBag.LastId;
 
     var cats = (IEnumerable<Category>)ViewBag.Categories;
 
@@ -14,8 +15,9 @@
     var class2_2 = "col-md-4 pull-right md-no-pull";
 
     var standardAjaxOps = new AjaxOptions { InsertionMode = InsertionMode.Replace, HttpMethod = "POST" };
- 
-    
+
+    var active = "active";
+
 }
 <!-- Page Header Section  -->
 <section id="site-page-header" class="site-page-header blog-header polygon-bg">
@@ -54,17 +56,27 @@
             </div><!-- /.title-container -->
 
             <div class="text-center tm30 bm30 portfolioFilter v2">
-                <a href="#" data-filter="*" class="active btn sm-btn rbtn has-badge filter-btn">All<span class="badge">@cats.Count()</span> </a>
+                <a href="~/Home/Projects" data-filter="*" class="@{if (lastPickedID == 0)
+                                                                   { @active }} btn sm-btn rbtn has-badge filter-btn">All<span class="badge">@cats.Count()</span> </a>
 
                 @{
                     foreach (var cat in cats)
                     {
                         var catName = cat.Name;
-                        @Ajax.ActionLink(catName, "Projects", "Home", new { id = cat.CategoryId }, standardAjaxOps, new { @class = "btn sm-btn rbtn has-badge filter-btn" });
-                                                                                                                                    
+
+                        var activeCss = "btn sm-btn rbtn has-badge filter-btn";
+
+                        if (cat.CategoryId == lastPickedID)
+                        {
+                            activeCss = "active btn sm-btn rbtn has-badge filter-btn";
+                        }
+
+                        <a href="~/Home/Projects?id=@cat.CategoryId" class="@activeCss">@cat.Name</a>
+
+                        @*@Html.ActionLink(catName, "Projects", "Home", new { id = cat.CategoryId }, new { @class = @activeCss }) ;*@
                     }
                 }
-                <a href="#" data-filter=".cat-1" class=" btn sm-btn rbtn has-badge filter-btn">Web Design<span class="badge">4</span> </a>
+                @*<a href="#" data-filter=".cat-1" class=" btn sm-btn rbtn has-badge filter-btn">Web Design<span class="badge">4</span> </a>*@
 
 
             </div>
@@ -105,30 +117,30 @@
                                         </div><!-- /.portfolio-item -->
                                     </div>
 
-                                @if (project.Graphic2 != null && project.Graphic2 != "")
-                                {
-                                    <div style="padding:3px">
-                                        <div class="portfolio-item border-style md-bm30 md-bm30">
-                                            <figure>
-                                                <img src="@project.Graphic2" alt="project Image">
-                                                <div class="item-link">
-                                                    <a class="project-link" href="@project.ProjectURL"><i class="fa fa-link"></i></a>
-                                                    <a class="zoom-link boxer" href="@project.Graphic2" title="@project.Name"><i class="fa fa-search-plus"></i></a>
-                                                </div><!-- /.item-link -->
-                                                <figcaption class="item-description">
-                                                    <h4 class="item-title">
-                                                        @project.Name
-                                                    </h4><!-- /.item-title -->
-                                                    @*<span class="item-category">
-                                                            @project.Clients
-                                                            <span class="numbers"> 100 <i class="fa fa-heart"></i> </span>
-                                                        </span>*@
-                                                    <!-- /.item-category -->
-                                                </figcaption>
-                                            </figure>
-                                        </div><!-- /.portfolio-item -->
-                                    </div>
-                                }
+                                    @if (project.Graphic2 != null && project.Graphic2 != "")
+                                    {
+                                        <div style="padding:3px">
+                                            <div class="portfolio-item border-style md-bm30 md-bm30">
+                                                <figure>
+                                                    <img src="@project.Graphic2" alt="project Image">
+                                                    <div class="item-link">
+                                                        <a class="project-link" href="@project.ProjectURL"><i class="fa fa-link"></i></a>
+                                                        <a class="zoom-link boxer" href="@project.Graphic2" title="@project.Name"><i class="fa fa-search-plus"></i></a>
+                                                    </div><!-- /.item-link -->
+                                                    <figcaption class="item-description">
+                                                        <h4 class="item-title">
+                                                            @project.Name
+                                                        </h4><!-- /.item-title -->
+                                                        @*<span class="item-category">
+                                                                @project.Clients
+                                                                <span class="numbers"> 100 <i class="fa fa-heart"></i> </span>
+                                                            </span>*@
+                                                        <!-- /.item-category -->
+                                                    </figcaption>
+                                                </figure>
+                                            </div><!-- /.portfolio-item -->
+                                        </div>
+                                    }
 
 
 
@@ -193,12 +205,12 @@
                             <hr class="tm30 bm50">
                         </div><!-- /.item -->
 
-                        repeatCount++;
+                                    repeatCount++;
                     }
                 }
 
 
-               <!--End repeat-->
+                <!--End repeat-->
 
                 <hr class="tm50">
             </div><!-- /#portfolio-item -->
@@ -252,7 +264,3 @@
         </div><!-- /.section-padding -->
     </div><!-- /.container -->
 </section><!-- /#clients -->
-
-
-
-
