@@ -636,6 +636,7 @@
     <Content Include="images\slider\2.png" />
     <Content Include="images\slider\3.png" />
     <Content Include="images\slider\4.png" />
+    <Content Include="images\slider\atlant_monitor.png" />
     <Content Include="images\slider\bg1.jpg" />
     <Content Include="images\slider\bg2.jpg" />
     <Content Include="images\slider\bg3.jpg" />
@@ -751,6 +752,8 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="videos\movie.mp4.txt" />
+    <Content Include="videos\My Movie 2.mp4" />
+    <Content Include="videos\Railgun Video 1.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
