@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using web.railgun.com.Models;
@@ -18,6 +19,23 @@ namespace web.railgun.com.Controllers
         {
             var model = db.Projects.Where(x => x.CategoryId == CategoryId).ToList();
             return PartialView(model);
+        }
+
+        public ActionResult Contact()
+        {
+
+            return View();
+        }
+
+        public async Task<string> PostContactForm()
+        {
+
+
+
+            return "Okay thanks";
+
+            return "Sorry that failed";
+
         }
 
 
