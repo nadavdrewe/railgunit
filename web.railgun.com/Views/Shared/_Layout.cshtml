@@ -3,7 +3,7 @@
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
-    <title>RAILGUN.IT - WebTech Designed For Your Business</title>
+    <title>RAILGUN.IT - BUSINESS TECHNOLOGY REDIFINED</title>
 
     <!-- Meta -->
     <meta name="description" content="FOCUZ is a Creative Multipurpose HTML5 Template">
@@ -88,18 +88,10 @@
                     <nav id="primary-menu">
 
                         <ul class="main-menu">
-                            <li class="current has-sub-menu">
-                                <a href="@Url.Action("Index","Home", null, Request.Url.Scheme)"><div>Who We Are</div></a>
-                                <ul class="sub-menu">
-                                    <li><a href="~/Home/Index#railgunInnovative">What We Do</a></li>
-                                    @*<li><a href="@Url.Action("LetTalkBusiness", "Home", null, Request.Url.Scheme)">Let's Talk Business</a></li>
-                                    <li><a href="@Url.Action("LetTalkTech", "Home", null, Request.Url.Scheme)">Let's Talk Tech</a></li>
-                                    <li><a href="@Url.Action("", "Home", null, Request.Url.Scheme)">Jobs</a></li>*@
-                                    <li><a href="@Url.Action("Team", "Home", null, Request.Url.Scheme)">Meet The Team</a></li>
-
-                                </ul><!-- /.sub-menu -->
-                            </li><!-- /.has-sub-menu -->
-
+                
+                            <li class="mega-menu">
+                                <a href="~/Home/index"><div>Home</div></a>
+                            </li>
 
 
                             <li class="has-sub-menu">
@@ -149,6 +141,20 @@
 
                                     <li><a href="@Url.Action("ProjectsInProgress", "Home", null, Request.Url.Scheme)"><i class="fa fa-history"></i>In progress</a></li>
                             
+
+                                </ul><!-- /.sub-menu -->
+                            </li><!-- /.has-sub-menu -->
+
+
+                            <li class="current has-sub-menu">
+                                <a href="@Url.Action("Index","Home", null, Request.Url.Scheme)"><div>Who We Are</div></a>
+                                <ul class="sub-menu">
+                                    <li><a href="~/Home/Index#railgunInnovative">What We Do</a></li>
+                                    @*<li><a href="@Url.Action("LetTalkBusiness", "Home", null, Request.Url.Scheme)">Let's Talk Business</a></li>
+                <li><a href="@Url.Action("LetTalkTech", "Home", null, Request.Url.Scheme)">Let's Talk Tech</a></li>
+                <li><a href="@Url.Action("", "Home", null, Request.Url.Scheme)">Jobs</a></li>*@
+
+                                    <li><a href="~/Home/Index#railgunInnovative">Our Values</a></li>
 
                                 </ul><!-- /.sub-menu -->
                             </li><!-- /.has-sub-menu -->
@@ -216,10 +222,6 @@
 
 
 
-                            <li class="has-sub-menu">
-                                <a href="~/Views/Home/Services.cshtml">
-                                    <div>Our Values </div>
-                                </a>
 
                               @*<ul class="sub-menu">
                                  <li class="has-sub-menu">
@@ -247,10 +249,13 @@
                                         </ul>
                                     </li>
                                     <li><a href="faq.html"> <i class="fa fa-tasks"></i> FAQ </a></li>*@
-                                @*</ul><!-- /.sub-menu -->*@
-                           @* </li><!-- /.has-sub-menu -->*@
+                                @*</ul><!-- /.sub-menu -->*@       
                         
-    <li class="mega-menu">
+                                        @* </li><!-- /.has-sub-menu -->*@
+
+                 
+
+<li class="mega-menu">
         <a href="~/Home/Team"><div>RailTeam</div></a>
         @*<div class="mega-menu-content col-5 clearfix">
             <ul>
