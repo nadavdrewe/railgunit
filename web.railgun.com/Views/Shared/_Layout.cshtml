@@ -109,35 +109,24 @@
                                         </ul>
                                     </li>
                                     <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-user"></i>Case Management</a>
+                                        <a href="#"> <i class="fa fa-user"></i>Mobile Apps</a>
                                         <ul class="sub-menu">
                                             @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 2 });}
                                         </ul>
                                     </li>
                                     <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-envelope"></i>Integrations</a>
-                                        <ul class="sub-menu">
-                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 3 });}
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-support"></i>Management Information</a>
-                                        <ul class="sub-menu">
-                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 6 });}
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-users"></i>Webservices</a>
-                                        <ul class="sub-menu">
-                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 4 });}
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-users"></i>Mobile</a>
+                                        <a href="#"> <i class="fa fa-envelope"></i>Ecommerce</a>
                                         <ul class="sub-menu">
                                             @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 5 });}
                                         </ul>
                                     </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-support"></i>Reporting Suites</a>
+                                        <ul class="sub-menu">
+                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 6 });}
+                                        </ul>
+                                    </li>
+                  
 
                                     <li><a href="@Url.Action("ProjectsInProgress", "Home", null, Request.Url.Scheme)"><i class="fa fa-history"></i>In progress</a></li>
                             
