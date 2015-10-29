@@ -751,9 +751,12 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="videos\Railgun Promo Video 3.MOV" />
     <Content Include="videos\movie.mp4.txt" />
-    <Content Include="videos\My Movie 2.mp4" />
+    <Content Include="videos\Railgun Video 2.mp4" />
+    <Content Include="videos\Railgun Promo Video 2.mp4" />
     <Content Include="videos\Railgun Video 1.mp4" />
+    <Content Include="videos\Railgun Promo Video 1.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

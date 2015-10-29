@@ -3,7 +3,7 @@
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
-    <title>RAILGUN.IT - WebTech Designed For Your Business</title>
+    <title>RAILGUN.IT - BUSINESS TECHNOLOGY REDIFINED</title>
 
     <!-- Meta -->
     <meta name="description" content="FOCUZ is a Creative Multipurpose HTML5 Template">
@@ -88,23 +88,15 @@
                     <nav id="primary-menu">
 
                         <ul class="main-menu">
-                            <li class="current has-sub-menu">
-                                <a href="@Url.Action("Index","Home", null, Request.Url.Scheme)"><div>Railgun</div></a>
-                                <ul class="sub-menu">
-                                    <li><a href="~/Home/Index#railgunInnovative">What We Do</a></li>
-                                    @*<li><a href="@Url.Action("LetTalkBusiness", "Home", null, Request.Url.Scheme)">Let's Talk Business</a></li>
-                                    <li><a href="@Url.Action("LetTalkTech", "Home", null, Request.Url.Scheme)">Let's Talk Tech</a></li>
-                                    <li><a href="@Url.Action("", "Home", null, Request.Url.Scheme)">Jobs</a></li>*@
-                                    <li><a href="@Url.Action("Team", "Home", null, Request.Url.Scheme)">About Railgun</a></li>
-
-                                </ul><!-- /.sub-menu -->
-                            </li><!-- /.has-sub-menu -->
-
+                
+                            <li class="mega-menu">
+                                <a href="~/Home/index"><div>Home</div></a>
+                            </li>
 
 
                             <li class="has-sub-menu">
                                 <a href="#">
-                                    <div>Railgunned</div>
+                                    <div>Our Work</div>
                                 </a>
 
                                 <ul class="sub-menu">
@@ -117,38 +109,41 @@
                                         </ul>
                                     </li>
                                     <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-user"></i>Case Management</a>
+                                        <a href="#"> <i class="fa fa-user"></i>Mobile Apps</a>
                                         <ul class="sub-menu">
                                             @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 2 });}
                                         </ul>
                                     </li>
                                     <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-envelope"></i>Integrations</a>
-                                        <ul class="sub-menu">
-                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 3 });}
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-support"></i>Management Information</a>
-                                        <ul class="sub-menu">
-                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 6 });}
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-users"></i>Webservices</a>
-                                        <ul class="sub-menu">
-                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 4 });}
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-users"></i>Mobile</a>
+                                        <a href="#"> <i class="fa fa-envelope"></i>Ecommerce</a>
                                         <ul class="sub-menu">
                                             @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 5 });}
                                         </ul>
                                     </li>
+                                    <li class="has-sub-menu">
+                                        <a href="#"> <i class="fa fa-support"></i>Reporting Suites</a>
+                                        <ul class="sub-menu">
+                                            @{Html.RenderAction("RenderMenu", "Home", new { CategoryId = 6 });}
+                                        </ul>
+                                    </li>
+                  
 
                                     <li><a href="@Url.Action("ProjectsInProgress", "Home", null, Request.Url.Scheme)"><i class="fa fa-history"></i>In progress</a></li>
                             
+
+                                </ul><!-- /.sub-menu -->
+                            </li><!-- /.has-sub-menu -->
+
+
+                            <li class="current has-sub-menu">
+                                <a href="@Url.Action("Index","Home", null, Request.Url.Scheme)"><div>Who We Are</div></a>
+                                <ul class="sub-menu">
+                                    <li><a href="~/Home/Index#railgunInnovative">What We Do</a></li>
+                                    @*<li><a href="@Url.Action("LetTalkBusiness", "Home", null, Request.Url.Scheme)">Let's Talk Business</a></li>
+                <li><a href="@Url.Action("LetTalkTech", "Home", null, Request.Url.Scheme)">Let's Talk Tech</a></li>
+                <li><a href="@Url.Action("", "Home", null, Request.Url.Scheme)">Jobs</a></li>*@
+
+                                    <li><a href="~/Home/Index#railgunInnovative">Our Values</a></li>
 
                                 </ul><!-- /.sub-menu -->
                             </li><!-- /.has-sub-menu -->
@@ -216,28 +211,24 @@
 
 
 
-                            <li class="has-sub-menu">
-                                <a href="#">
-                                    <div>RailTicket</div>
-                                </a>
 
-                                <ul class="sub-menu">
-                                    <li class="has-sub-menu">
-                                        <a href="#"> <i class="fa fa-shopping-cart"></i> Starting Development</a>
+                              @*<ul class="sub-menu">
+                                 <li class="has-sub-menu">
+                                     <a href="#"> <i class="fa fa-shopping-cart"></i> Starting Development</a>*@
                                         @*<ul class="sub-menu">
                                             <li><a href="shop-01-FullWidth.html"> <i class="fa fa-shopping-cart"></i> </a></li>                                            
 
                                         </ul>*@
-                                    </li>
-                                    <li class="has-sub-menu">
-                                        <a href="~/Home/Index#pricing"> <i class="fa fa-user"></i> Prices</a>
+                                   @* </li>
+                                        <li class="has-sub-menu">
+                                        <a href="~/Home/Index#pricing"> <i class="fa fa-user"></i> Prices</a>*@
                                         @*<ul class="sub-menu">
                                             <li><a href="about-us-01.html"> <i class="fa fa-user"></i> About Us 01 </a></li>
                                             <li><a href="about-us-02.html"> <i class="fa fa-user"></i> About Us 02 </a></li>
                                             <li><a href="about-me-03.html"> <i class="fa fa-user"></i> About Me 01 </a></li>
                                             <li><a href="about-me-04.html"> <i class="fa fa-user"></i> About Me 02 </a></li>
                                         </ul>*@
-                                    </li>
+                                    @*/li><*@
                                     @*<li class="has-sub-menu">
                                         <a href="#"> <i class="fa fa-envelope"></i> Feature List</a>
                                         <ul class="sub-menu">
@@ -247,59 +238,62 @@
                                         </ul>
                                     </li>
                                     <li><a href="faq.html"> <i class="fa fa-tasks"></i> FAQ </a></li>*@
-                                </ul><!-- /.sub-menu -->
-                            </li><!-- /.has-sub-menu -->
+                                @*</ul><!-- /.sub-menu -->*@       
+                        
+                                        @* </li><!-- /.has-sub-menu -->*@
 
-                            <li class="mega-menu">
-                                <a href="~/Home/Team"><div>RailTeam</div></a>
-                                @*<div class="mega-menu-content col-5 clearfix">
-                                    <ul>
-                                        <li><a href="#">Animations</a></li>
-                                        <li><a href="#">Buttons</a></li>
-                                        <li><a href="#">Carousel</a></li>
-                                        <li><a href="#">Charts</a></li>
-                                        <li><a href="#">Clients</a></li>
-                                        <li><a href="#">Columns</a></li>
-                                        <li><a href="#">Counters</a></li>
-                                    </ul>
-                                    <ul>
-                                        <li><a href="#">Dividers</a></li>
-                                        <li><a href="#">Icon Boxes</a></li>
-                                        <li><a href="#">Galleries</a></li>
-                                        <li><a href="#">Heading Styles</a></li>
-                                        <li><a href="#">Icon Lists</a></li>
-                                        <li><a href="#">Labels</a></li>
-                                        <li><a href="#">Lightbox</a></li>
-                                    </ul>
+                 
 
-                                    <ul>
-                                        <li><a href="#">Lists &amp; Panels</a></li>
-                                        <li><a href="#">Maps</a></li>
-                                        <li><a href="#">Media Embeds</a></li>
-                                        <li><a href="#">Modal Boxes</a></li>
-                                        <li><a href="#">Navigations</a></li>
-                                        <li><a href="#">Pagination</a></li>
-                                        <li><a href="#">Pies &amp; Skills</a></li>
-                                    </ul>
-                                    <ul>
-                                        <li><a href="#">Pricing Boxes</a></li>
-                                        <li><a href="#">Process Steps</a></li>
-                                        <li><a href="#">Promo Boxes</a></li>
-                                        <li><a href="#">Blockquotes</a></li>
-                                        <li><a href="#">Responsive</a></li>
-                                        <li><a href="#">Sections</a></li>
-                                        <li><a href="#">Social Icons</a></li>
-                                    </ul>
-                                    <ul>
-                                        <li><a href="#">Alert Boxes</a></li>
-                                        <li><a href="#">Styled Icons</a></li>
-                                        <li><a href="#">Tables</a></li>
-                                        <li><a href="#">Tabs</a></li>
-                                        <li><a href="#">Testimonials</a></li>
-                                        <li><a href="#">Thumbnails</a></li>
-                                        <li><a href="#">Toggles</a></li>
-                                    </ul>
-                                </div>*@
+<li class="mega-menu">
+        <a href="~/Home/Team"><div>RailTeam</div></a>
+        @*<div class="mega-menu-content col-5 clearfix">
+            <ul>
+                <li><a href="#">Animations</a></li>
+                <li><a href="#">Buttons</a></li>
+                <li><a href="#">Carousel</a></li>
+                <li><a href="#">Charts</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Columns</a></li>
+                <li><a href="#">Counters</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Dividers</a></li>
+                <li><a href="#">Icon Boxes</a></li>
+                <li><a href="#">Galleries</a></li>
+                <li><a href="#">Heading Styles</a></li>
+                <li><a href="#">Icon Lists</a></li>
+                <li><a href="#">Labels</a></li>
+                <li><a href="#">Lightbox</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#">Lists &amp; Panels</a></li>
+                <li><a href="#">Maps</a></li>
+                <li><a href="#">Media Embeds</a></li>
+                <li><a href="#">Modal Boxes</a></li>
+                <li><a href="#">Navigations</a></li>
+                <li><a href="#">Pagination</a></li>
+                <li><a href="#">Pies &amp; Skills</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Pricing Boxes</a></li>
+                <li><a href="#">Process Steps</a></li>
+                <li><a href="#">Promo Boxes</a></li>
+                <li><a href="#">Blockquotes</a></li>
+                <li><a href="#">Responsive</a></li>
+                <li><a href="#">Sections</a></li>
+                <li><a href="#">Social Icons</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Alert Boxes</a></li>
+                <li><a href="#">Styled Icons</a></li>
+                <li><a href="#">Tables</a></li>
+                <li><a href="#">Tabs</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Thumbnails</a></li>
+                <li><a href="#">Toggles</a></li>
+            </ul>
+        </div>*@
                             </li><!-- /.mega-menu -->
 
                             @*<li class="mega-menu">
@@ -392,7 +386,7 @@
                             </li><!-- /.mega-menu -->*@
 
                             <li>
-                                <a href="mailto:info@railgunit.com"><div>RailTalk</div></a>
+                                <a href="~/Home/Index#Contact"><div>Contact</div></a>
                             </li>
                         </ul><!-- /.main-menu -->
                         @*<!-- Top Cart  -->
@@ -451,6 +445,124 @@
     <!-- Header Section End -->
     @RenderBody()
 
+<!--CONTACT FORM-->
+@*@{
+        ViewBag.Title = "Contact";
+    }
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <label for="name">Your name:</label><br />
+            <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+        </div>
+        <div class="row">
+            <label for="email">Your email:</label><br />
+            <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+        </div>
+        <div class="row">
+            <label for="message">Your message:</label><br />
+            <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+        </div>
+        <input id="submit_button" type="submit" value="Send email" />
+    </form>
+
+
+    <address>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </address>
+
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>*@
+
+
+<div id="wrapper" class="sbr">
+    <div id="content">
+        <!-- - - - - - - - - - - - - - Container - - - - - - - - - - - - - - - - -->
+
+        <div class="container ajax">
+
+
+            <div class="page-header">
+
+
+
+
+                <h1 class='font-small'>Get in touch!</h1>
+
+
+            </div><!--/ .page-header-->
+
+
+            <section class="twelve columns" id="main">
+
+
+                <!-- - - - - - - - - - - - Entry - - - - - - - - - - - - - - -->
+
+
+
+
+                <div class="google_map" id="google_map_55b90536e9ca7" style="height: 380 px;" data-latitude="51.5287718" data-longitude="-0.2416804" data-inique_id="55b90536e9ca7" data-zoom="11" data-maptype="ROADMAP" data-content="" data-enable_marker="0" data-enable_popup="0" data-enable_scrollwheel="0" data-js_controls="{}" data-marker_is_draggable="0"></div>
+
+                <script type="text/javascript">
+                    jQuery(function() {
+                        gmt_init_map(51.5287718, -0.2416804, "google_map_55b90536e9ca7", 11, "ROADMAP", "", "0", "0", "0", {}, "0");
+                    });
+                </script>
+
+                <div class="clear"></div>
+                <div class="clearfix" style="">
+                    <div class="clearfix alpha twelve columns">
+
+
+                        @using (Ajax.BeginForm("MailingListSignup", "Home", new AjaxOptions { OnFailure = "alert('Sorry, that didn't work');", OnSuccess = "alert('Thank for signing up');", UpdateTargetId = "contact_form_response", InsertionMode = InsertionMode.Replace }))
+                        {
+
+                            <p>
+                                <input id="name_55b9053704cd7" required="" placeholder="Your Name *" type="text" name="Name" value="" size="40" />
+
+                            </p>
+
+                            <p>
+                                <input id="email_55b9053704cd7" required="" placeholder="E-mail *" type="email" name="Email" value="" size="40" />
+                            </p>
+                            <p>
+                                <input id="email_55b9053704cd7" required="" placeholder="Phone *" type="text" name="Phone" value="" size="40" />
+                            </p>
+                            <p>
+                                <textarea name="message" id="message" placeholder="Message *" type="text" value="" cols="40" rows="6"></textarea>
+                            </p>
+
+                            <div class="col-md-4 text-left">
+                                <a href="#contact" class="btn md-btn purchase">
+                                    SEND   >
+                                </a>
+                                <p></p>
+                            </div><!-- /.col-md-4 -->
+                        }
+
+
+                        <div class="contact_form_response" style="display: none;">
+
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+                </div>
+
+                <!-- - - - - - - - - - - - end Entry - - - - - - - - - - - - - - -->
+
+
+        </div>
+    </div>
+    <!--END CONTACT FORM-->
 
 
     <!-- Footer Section  -->
@@ -464,7 +576,7 @@
                     <div class="callout-content relative section-padding bp0 clearfix">
                         <div class="col-md-8">
                             <div class="row">
-                                <h2>Still not Convinced? We'll give you a top-level business & I.T. analysis for free. Contact <span>Railgun.it </span>today</h2>
+                                <h2>Still not Convinced? We'll give you a free of charge initial consulation. Contact <span>Railgun.it </span>today</h2>
                                 <div class="action-links">
                                     <a href="mailto:info@railgunit.com">Contact Us <i class="fa fa-envelope"></i> </a>
                                     @*<span class="or">or</span>
@@ -493,55 +605,39 @@
                 <div class="social-icons pull-right">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/railgunit?ref=aymt_homepage_panel">
                                 <div class="icon-content fa-facebook">Facebook</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://twitter.com/railgun_it">
                                 <div class="icon-content fa-twitter">Twitter</div>
                             </a>
                         </li>
+               
+
                         <li>
-                            <a href="#">
-                                <div class="icon-content fa-google-plus">Google Plus</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="icon-content fa-dribbble">Dribbble</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="https://www.linkedin.com/company/railgunit">
                                 <div class="icon-content fa-linkedin">Linkedin</div>
                             </a>
                         </li>
+
+               
                         <li>
-                            <a href="#">
-                                <div class="icon-content fa-stumbleupon">Stumbleupon</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="icon-content fa-rss">RSS Feed</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="https://vimeo.com/142001193">
                                 <div class="icon-content fa-vimeo-square">Vimeo</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.youtube.com/channel/UCptMhvJ5-Eof0oYeYIYk_RQ">
                                 <div class="icon-content fa-youtube">YouTube</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <div class="icon-content fa-tumblr">Tumblr</div>
+                          <!---  <a href="https://business.google.com/b/108712730040035196862/dashboard?hl=en-GB"> Don't know why doesn't render on mobile
+                                <div class="icon-content fa-google-plus">Google Plus</div>
                             </a>
-                        </li>
+                        </li>--->
                     </ul>
                 </div><!--  /.social-icons -->
             </div><!--  /.container -->
@@ -566,7 +662,7 @@
                                     </h4>
                                 </div>
                                 <p>
-                                    Agile IT systems design and development specifically for small/medium businesses. We build the plaform to enable your company to respond in the modern business environment.
+                                    We’re a London based technology company specialising in web development, mobile applications, ecommerce systems and interactive reporting suites.
                                 </p>
                                 <ul class="contact-info">
                                     <li class="fa-envelope"><a href="mailto:info@railgunit.com">info@railgunit.com</a></li>
@@ -675,17 +771,17 @@
                 <div class="container">
                     <div class="footer-menu pull-right">
                         <ul>
-                            <li><a href="~/Home">Home</a></li>                     
+                            <li><a href="~/Home">Home</a></li>
                             <li><a href="~/Home/Projects">Portfolio</a></li>
                             <li><a href="#">Blog</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Services</a></li>
+
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </div><!-- /.footer-menu -->
 
                     <div class="copyrights lrp15">
-                        Copyright &copy; @DateTime.Now.Year <a href="#">Railgun.it</a> -  Developed <a href="http://www.railgunit.com">using Railgun</a>
+                        Copyright &copy; @DateTime.Now.Year <a href="http://www.railgunit.com">Railgun.it</a> -  Developed <a href="http://www.railgunit.com">using Railgun technology</a>
                     </div><!-- /.copyrights -->
                 </div><!-- /.container -->
             </div><!-- /.footer-container -->
@@ -715,54 +811,54 @@
 
     <script src="~/assets/masterslider/jquery.easing.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-    
+
 
     <!-- Master Slider -->
     <script src="~/assets/masterslider/masterslider.min.js"></script>
 
     <script type="text/javascript">
 
-        (function ($) {
-            "use strict";
-            $(function () {
-                var focuzSlider = new MasterSlider();
-                // slider controls
-                focuzSlider.control('arrows');
-                focuzSlider.control('timebar', { insertTo: '#focuz-main-slider' });
-                //focuzSlider.control('bullets');
-                // slider setup
-                focuzSlider.setup("focuz-main-slider", {
-                    width: 1140,
-                    height: 600,
-                    space: 0,
-                    start: 1,
-                    layout: 'fullwidth',
-                    loop: true,
-                    preload: 0,
-                    autoplay: true,
-                    centerControls: false,
-                    view: "mask"
+            (function ($) {
+                "use strict";
+                $(function () {
+                    var focuzSlider = new MasterSlider();
+                    // slider controls
+                    focuzSlider.control('arrows');
+                    focuzSlider.control('timebar', { insertTo: '#focuz-main-slider' });
+                    //focuzSlider.control('bullets');
+                    // slider setup
+                    focuzSlider.setup("focuz-main-slider", {
+                        width: 1140,
+                        height: 600,
+                        space: 0,
+                        start: 1,
+                        layout: 'fullwidth',
+                        loop: true,
+                        preload: 0,
+                        autoplay: true,
+                        centerControls: false,
+                        view: "mask"
+                    });
+
+                    // MSScrollParallax.setup( focuzSlider, 30, 50, true );
+                    // window.masterslider_instances = window.masterslider_instances || {};
+                    // window.masterslider_instances["2_d4ec"] = focuzSlider;
                 });
 
-                // MSScrollParallax.setup( focuzSlider, 30, 50, true );
-                // window.masterslider_instances = window.masterslider_instances || {};
-                // window.masterslider_instances["2_d4ec"] = focuzSlider;
-            });
-
-            var clientReview = new MasterSlider();
-            clientReview.setup('client-review-slider', {
-                loop: true,
-                width: 100,
-                height: 100,
-                speed: 50,
-                view: 'focus',
-                preload: 'all',
-                space: 10,
-                wheel: true
-            });
-            clientReview.control('arrows', { insertTo: '#client-review-nav', autohide: false });
-            clientReview.control('slideinfo', { insertTo: '#client-review-info' });
-        })(jQuery);
+                var clientReview = new MasterSlider();
+                clientReview.setup('client-review-slider', {
+                    loop: true,
+                    width: 100,
+                    height: 100,
+                    speed: 50,
+                    view: 'focus',
+                    preload: 'all',
+                    space: 10,
+                    wheel: true
+                });
+                clientReview.control('arrows', { insertTo: '#client-review-nav', autohide: false });
+                clientReview.control('slideinfo', { insertTo: '#client-review-info' });
+            })(jQuery);
 
     </script>
     <script src="~/assets/js/custom.js"></script>
@@ -777,38 +873,38 @@
 
     <script type="text/javascript">
 
-        $(function () {
-            var hsort_flg = false;
+            $(function () {
+                var hsort_flg = false;
 
-            //setup
-            var vg = $("#grid-content").vgrid({
-                easing: "easeOutQuint",
-                useLoadImageEvent: true,
-                useFontSizeListener: true,
-                time: 400,
-                delay: 20,
-                wait: 500,
-                fadeIn: {
-                    time: 500,
-                    delay: 50
-                }
+                //setup
+                var vg = $("#grid-content").vgrid({
+                    easing: "easeOutQuint",
+                    useLoadImageEvent: true,
+                    useFontSizeListener: true,
+                    time: 400,
+                    delay: 20,
+                    wait: 500,
+                    fadeIn: {
+                        time: 500,
+                        delay: 50
+                    }
+                });
+
+                $(window).load(function (e) {
+                    vg.vgrefresh();
+                });
+
             });
-
-            $(window).load(function (e) {
-                vg.vgrefresh();
-            });
-
-        });
 
     </script>
 
     <script>
-        $(document).ready(function () {
-            $(".dotdot").dotdotdot({
-                //	configuration goes here
-                ellipsis: '... '
+            $(document).ready(function () {
+                $(".dotdot").dotdotdot({
+                    //	configuration goes here
+                    ellipsis: '... '
+                });
             });
-        });
     </script>
 
 </body>

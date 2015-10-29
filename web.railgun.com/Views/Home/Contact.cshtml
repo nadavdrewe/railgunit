@@ -1,8 +1,25 @@
-﻿@{
+﻿@*@{
     ViewBag.Title = "Contact";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
+
+<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+    <div class="row">
+        <label for="name">Your name:</label><br />
+        <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+    </div>
+    <div class="row">
+        <label for="email">Your email:</label><br />
+        <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+    </div>
+    <div class="row">
+        <label for="message">Your message:</label><br />
+        <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+    </div>
+    <input id="submit_button" type="submit" value="Send email" />
+</form>						
+
 
 <address>
     One Microsoft Way<br />
@@ -14,4 +31,86 @@
 <address>
     <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+</address>*@
+
+
+<div id="wrapper" class="sbr">
+    <div id="content">
+        <!-- - - - - - - - - - - - - - Container - - - - - - - - - - - - - - - - -->
+
+        <div class="container ajax">
+
+
+            <div class="page-header">
+
+
+
+
+                <h1 class='font-small'>Get in touch!</h1>
+
+
+            </div><!--/ .page-header-->
+
+
+            <section class="twelve columns" id="main">
+
+
+                <!-- - - - - - - - - - - - Entry - - - - - - - - - - - - - - -->
+
+
+
+
+                <div class="google_map" id="google_map_55b90536e9ca7" style="height: 380 px;" data-latitude="51.5287718" data-longitude="-0.2416804" data-inique_id="55b90536e9ca7" data-zoom="11" data-maptype="ROADMAP" data-content="" data-enable_marker="0" data-enable_popup="0" data-enable_scrollwheel="0" data-js_controls="{}" data-marker_is_draggable="0"></div>
+
+                <script type="text/javascript">
+                    jQuery(function() {
+                        gmt_init_map(51.5287718, -0.2416804, "google_map_55b90536e9ca7", 11, "ROADMAP", "", "0", "0", "0", {}, "0");
+                    });
+                </script>
+
+                <div class="clear"></div>
+                <div class="clearfix" style="">
+                    <div class="clearfix alpha twelve columns">
+                    
+
+                            @using (Ajax.BeginForm("MailingListSignup", "Home", new AjaxOptions { OnFailure = "alert('Sorry, that didn't work');", OnSuccess = "alert('Thank for signing up');", UpdateTargetId = "contact_form_response", InsertionMode = InsertionMode.Replace }))
+                            {
+
+                            <p>
+                                <input id="name_55b9053704cd7" required="" placeholder="Your Name *" type="text" name="Name" value="" size="40" />                            
+
+                            </p>
+
+                            <p>
+                                <input id="email_55b9053704cd7" required="" placeholder="E-mail *" type="email" name="Email" value="" size="40"/>
+                            </p>
+                            <p>
+                                <input id="email_55b9053704cd7" required="" placeholder="Phone *" type="text" name="Phone" value="" size="40"/>
+                            </p>
+                            <p> 
+                                <textarea name="message" id="message" placeholder="Message *" type="text"  value="" cols="40" rows="6"></textarea>
+                             </p>
+                             
+                            <div class="col-md-4 text-left">
+                                <a href="#contact" class="btn md-btn purchase">
+                                    SEND   >
+                                </a>
+                        <p></p>
+                            </div><!-- /.col-md-4 -->
+                            }
+
+
+                            <div class="contact_form_response" style="display: none;">
+
+                            </div>
+
+                            <div class="clear"></div>
+
+                        </div>
+                    </div>
+
+                    <!-- - - - - - - - - - - - end Entry - - - - - - - - - - - - - - -->
+
+                
+        </div>
+    </div>
