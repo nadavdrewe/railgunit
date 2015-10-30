@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +40,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Email, Version=1.7.1.0, Culture=neutral, PublicKeyToken=8460651ed841735d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Aspose.Email.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -171,6 +176,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactRequestsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -184,6 +190,10 @@
     <Compile Include="Migrations\201504121420248_cat_nameToString.Designer.cs">
       <DependentUpon>201504121420248_cat_nameToString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510302009353_contactReq.cs" />
+    <Compile Include="Migrations\201510302009353_contactReq.Designer.cs">
+      <DependentUpon>201510302009353_contactReq.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs" />
@@ -192,6 +202,7 @@
     <Compile Include="Models\AspNetUserLogin.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Configuration\ProjectConfiguration.cs" />
+    <Compile Include="Models\ContactRequest.cs" />
     <Compile Include="Models\Feature.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -751,12 +762,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="videos\Railgun Promo Video 3.MOV" />
-    <Content Include="videos\movie.mp4.txt" />
-    <Content Include="videos\Railgun Video 2.mp4" />
-    <Content Include="videos\Railgun Promo Video 2.mp4" />
-    <Content Include="videos\Railgun Video 1.mp4" />
-    <Content Include="videos\Railgun Promo Video 1.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -808,6 +813,12 @@
     <Content Include="Views\Home\Operations.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Home\Team.cshtml" />
+    <Content Include="Views\ContactRequests\Create.cshtml" />
+    <Content Include="Views\ContactRequests\Delete.cshtml" />
+    <Content Include="Views\ContactRequests\Details.cshtml" />
+    <Content Include="Views\ContactRequests\Edit.cshtml" />
+    <Content Include="Views\ContactRequests\Index.cshtml" />
+    <Content Include="Views\Partial\ContactPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -817,6 +828,7 @@
     <Folder Include="images\home\home-4\" />
     <Folder Include="images\home\home-9\" />
     <Folder Include="images\services\" />
+    <Folder Include="Views\ContactRequest\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -832,6 +844,12 @@
     <EmbeddedResource Include="Migrations\201504121420248_cat_nameToString.resx">
       <DependentUpon>201504121420248_cat_nameToString.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510302009353_contactReq.resx">
+      <DependentUpon>201510302009353_contactReq.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

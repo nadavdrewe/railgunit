@@ -16,10 +16,10 @@ namespace web.railgun.com.Models
             : base("Name=railgunContext")
         {
         }
-        public DbSet<AspNetRole> AspNetRoles { get; set; }
-        public DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
-        public DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
-        public DbSet<AspNetUser> AspNetUsers { get; set; }
+          public DbSet<AspNetRole> AspNetRoles { get; set; }
+          public DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+          public DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+          public DbSet<AspNetUser> AspNetUsers { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<PricingTier> PricingTiers { get; set; }
@@ -27,16 +27,17 @@ namespace web.railgun.com.Models
         public DbSet<Value> Values { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Lead> Leads { get; set; }
-
+        public DbSet<ContactRequest> ContactRequests { get; set; }
         public DbSet<TeamMember> TeamMembers { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
             modelBuilder.Configurations.Add(new AspNetRoleMap());
             modelBuilder.Configurations.Add(new AspNetUserClaimMap());
             modelBuilder.Configurations.Add(new AspNetUserLoginMap());
             modelBuilder.Configurations.Add(new AspNetUserMap());
             modelBuilder.Configurations.Add(new ProjectConfiguration());
-
 
             modelBuilder.Entity<Feature>()
     .HasOptional(x => x.Category)
@@ -47,7 +48,6 @@ namespace web.railgun.com.Models
     .HasOptional(x => x.Category)
     .WithMany()
     .HasForeignKey(x => x.CategoryId);
-
 
         }
 

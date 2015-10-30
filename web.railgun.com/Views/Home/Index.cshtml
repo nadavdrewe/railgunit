@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Category>
+﻿@model System.Collections.Generic.IEnumerable<Category>
+@using System.Collections.Generic
 @using web.railgun.com.Models
 
 
@@ -8,8 +9,10 @@
     <div id="home-focuz-main-slider" class="master-slider-parent focuz-main-slider ms-parent-id-2" align="center" valign="center" bgcolor="#E6E6FA">
         <!-- MasterSlider Main -->
 
-        <iframe  src="https://player.vimeo.com/video/142001193"  width="500" height="281" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
+        <div style="padding:15px">
+            <iframe src="https://player.vimeo.com/video/142001193" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
         <!-- END MasterSlider Main -->
     </div>
     <!-- END MasterSlider -->
@@ -23,18 +26,18 @@
             <div class="callout-content relative section-padding bp0 clearfix">
                 <div class="col-md-8">
                     <div class="row">
-                        <h1>Business Technology  <span>Redefined</span></h1>
+                        <h1>Business <span>Technology  </span>Redefined</h1>
                         <p class="action-description">
                             We’re a London based technology company specialising in web development, mobile applications, ecommerce systems and interactive reporting suites. 
                             We provide digital services to small and medium sized businesses who want to advance their presence online. Using market leading 
-                            technologies we will help you meet your digital objectives. Contact us today for a <span style="color:#00a1cb">free of charge</span> initial consultation!</p>                            
+                            technologies we will help you meet your digital objectives.                        
 
                     </div><!-- /.row -->
                 </div><!-- /.col-md-8 -->
 
                 <div class="col-md-4 text-right">
                     <a href="#contact" class="btn md-btn purchase">
-                        Talk to us now
+                        Get a <span style="color:#00a1cb">free </span>initial consultation!
                     </a>
                 </div><!-- /.col-md-4 -->
             </div><!--  /.callout-content -->
@@ -75,18 +78,39 @@
 
 
 
+    <section id="top-action-section" class="callout-action top-part">
+        <div class="callout-action-area polygon-bg relative">
+            <div class="overlay-effects box-pattern"></div>
+            <div class="container">
+                <div class="callout-content relative section-padding bp0 clearfix">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <h1 style="color:white">"Railgun got my online card sales project up and running from nothing in 13 days" - Tom Boating</h1>
+                            <p class="action-description">
+                              Tell us about your ideas and watch us make them happen!
+                            </p>
+
+                        </div><!-- /.row -->
+                    </div><!-- /.col-md-8 -->
+
+                    <div class="col-md-4 text-right">
+                        <a href="#Contact" class="btn md-btn purchase">
+                          Contact Railgun.it now
+                        </a>
+                    </div><!-- /.col-md-4 -->
+                </div><!--  /.callout-content -->
+            </div><!--  /.container -->
+        </div><!--  /.callout-action-area -->
+    </section>
 
 
-
-<div class="dark-bg">
+@*<div class="dark-bg">
     <div class="callout-content p30 lrp15 clearfix wow bounceInUp" data-wow-delay=".1s">
         <div class="col-md-9">
             <h1 style="color:white">"Railgun got my online card sales project up and running from nothing in 13 days" - Tom Boating</h1>
         </div><!-- /.col-md-9 -->
         <div class="col-md-3 text-right">
-            <a href="mailto:info@railgunit.com" class="btn md-btn purchase m0">
-                Talk to us now
-            </a>
+         
             <br />
             <br />
             <a href="~/Home/Projects" class="btn md-btn purchase m0">
@@ -94,7 +118,7 @@
             </a>
         </div><!-- /.col-md-4 -->
     </div><!-- /.callout-action -->
-</div><!-- /.dark-bg -->
+</div><!-- /.dark-bg -->*@
 
 
 <hr>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Aspose.Email.Mail;
 using web.railgun.com.Models;
 
 namespace web.railgun.com.Controllers
@@ -69,14 +70,14 @@ namespace web.railgun.com.Controllers
             return View(model);
         }
 
-       
+
 
 
         [HttpGet]
         public ActionResult Projects(int id = 0)
         {
-            
-            var projects = id!=0 ? db.Projects.Where(x => x.CategoryId == id).Where(x => x.InProgress != true).ToList().OrderByDescending(x => x.DateInitiated) : db.Projects.Where(x => x.InProgress != true).ToList().OrderByDescending(x => x.DateInitiated);             
+
+            var projects = id != 0 ? db.Projects.Where(x => x.CategoryId == id).Where(x => x.InProgress != true).ToList().OrderByDescending(x => x.DateInitiated) : db.Projects.Where(x => x.InProgress != true).ToList().OrderByDescending(x => x.DateInitiated);
             ViewBag.Categories = db.Categories.ToList();
             ViewBag.LastId = id;
 
@@ -119,6 +120,53 @@ namespace web.railgun.com.Controllers
         {
             var team = db.TeamMembers.ToList();
             return View(team);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EmailUs([Bind(Include = "Id,Name,Email,Request,Phone")] ContactRequest contactRequest)
+        {
+            contactRequest.CreatedDate = DateTime.Now;
+            
+            var result = "We have receieved your request and will be in touch! Thanks for choosing Railgun.it!";
+            try
+            {
+                MailMessage theAsposeMessage;
+                SmtpClient theSMTPClient = new SmtpClient();
+                //set some defaults so i always get copied in
+
+                //create the message
+                theAsposeMessage = new MailMessage();
+                theSMTPClient.Host = "smtp.gmail.com";
+                theSMTPClient.Username = "railgunit.maintenance@gmail.com";
+                theSMTPClient.Password = "Diagonal23";
+                theSMTPClient.Port = 587;
+                theSMTPClient.EnableSsl = true;
+                theSMTPClient.SecurityMode = SmtpSslSecurityMode.Explicit;
+
+                //ADDRESSING
+                theAsposeMessage.From = theSMTPClient.Username;
+                theAsposeMessage.To = @"info@railgunit.com";
+                theAsposeMessage.Subject = "You got RailMail, fucko! A new client has something to tell you:";
+                var bodyMessage = "<h1>From:" + contactRequest.Email + " " + contactRequest.Name + " " + contactRequest.Phone + "</h1><br/>" + "<p>" + contactRequest.Request + "</p>";
+                theAsposeMessage.HtmlBody = bodyMessage;
+
+                theSMTPClient.Send(theAsposeMessage);
+
+                db.ContactRequests.Add(contactRequest);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                result = "Sorry that... didn't work. Try again later, or send us an email at info@railgunit.com";
+
+            }
+
+
+
+
+            return Json(new { result = result });
         }
 
 
